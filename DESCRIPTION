@@ -1,12 +1,15 @@
 Package: distilltools
 Type: Package
-Title: What the Package Does (Title Case)
+Title: A collection of tools to assist in the building of {distill} websites
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Authors@R: c(
+  person("Ella", "Kaye", email = "E.Kaye.1@warwick.ac.uk", role = c("aut", "cre")),
+  person("John Paul", "Helveston", role = c("aut")))
+Author: Ella Kaye [aut, cre], John Paul Helveston [aut]
+Maintainer: Ella Kaye <E.Kaye.1@warwick.ac.uk>
+URL: https://github.com/EllaKaye/distilltools
+Description: A collection of tools to assist in the building of {distill} websites
+License: CC BY-SA
 Encoding: UTF-8
 LazyData: true
 URL: https://github.com/EllaKaye/distilltools
