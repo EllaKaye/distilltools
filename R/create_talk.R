@@ -22,8 +22,7 @@
 #' create_talk("My Talk")
 #' }
 #' @export
-create_talk <- function(title, collection = "talks",author = "auto", slug = "auto", date = Sys.Date(), date_prefix = date, draft = FALSE, open = TRUE) {
-
+create_talk <- function(title, collection = "talks", author = "auto", slug = "auto", date = Sys.Date(), date_prefix = date, draft = FALSE, open = TRUE) {
   tmp <- distill::create_post(title = title, collection = collection, author = author, slug = slug, date = date, date_prefix = date_prefix, draft = draft, edit = FALSE)
 
   # find and save the yaml
@@ -71,9 +70,8 @@ icon_link(icon = "fas fa-folder-open",
 ```
   '
 
-xfun::write_utf8(yaml, con)
-xfun::write_utf8(body, con)
+  xfun::write_utf8(yaml, con)
+  xfun::write_utf8(body, con)
 
-if (open == TRUE) usethis::edit_file(tmp)
-
+  if (open == TRUE) usethis::edit_file(tmp)
 }

@@ -45,14 +45,12 @@ This function must be called from with a working directory that is within a Dist
 The output for a post must be \code{distill::distill_article}. If there is no output key in the provided template, this will be added to the yaml. If there is an \code{output} specified in the template yaml, it must be \code{distill::distill_article}, otherwise \code{create_post_from_template} will throw an error.
 
 Unlike \code{\link[distill:create_post]{distill::create_post()}}, \code{create_post_from_template} doesn't automatically provide a \code{description} key in the yaml.
-
-We recommend the use of \code{\link[here:here]{here::here()}} in specifying the path to the template
 }
 \examples{
 \dontrun{
 library(distilltools)
 # .Rmd templates stored in "templates" directory
-create_post(here::here("templates", "post-template.Rmd"))
+create_post_from_template(here::here("templates", "post-template.Rmd"))
 }
 
 }
