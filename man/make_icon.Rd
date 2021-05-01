@@ -27,7 +27,7 @@ Note that it will be necessary to add some CSS to in order to make the "buttons"
 }
 \examples{
 make_icon("r-project")
-icon_link("github", "materials", "https://github.com/USER/REPO")
+icon_link("fab fa-github", "materials", "https://github.com/USER/REPO")
 }
 \author{
 John Paul Helveston and Ella Kaye
