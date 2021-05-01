@@ -6,7 +6,7 @@
 #'
 #' @param icon The name of the icon. For Font Awesome icons, the name should correspond to current Version 5 long names (e.g. `"fab fa-github"`). [Academicons](https://jpswalsh.github.io/academicons/) can also be used and styled the same way (e.g. `"ai ai-google-scholar"`) but require a site header. See [here](https://www.jhelvy.com/posts/2021-03-25-customizing-distill-with-htmltools-and-css/#side-note-on-academic-icons) for details.
 #' @author John Paul Helveston and Ella Kaye
-#' @return For `make_icon`, a `shiny.tag` with the HTML `<i class = "icon"></i>`. For `icon_link`, a `shiny.tag` with the HTML `<a href=url class="icon-link"><i class=icon></i> text</a>`
+#' @return For `make_icon`, a `shiny.tag` with the HTML `<i class = "icon"></i>`. For `icon_link`, a `shiny.tag` with the HTML `<a href=url class="icon-link" target = "_blank" rel = "noopener"><i class=icon></i> text</a>`
 #' @export
 #'
 #' @examples make_icon("r-project")
@@ -23,7 +23,7 @@ make_icon_text <- function(icon, text) {
 #' @param url A url for where the button should link to
 #' @export
 #' @rdname make_icon
-#' @examples icon_link("github", "materials", "https://github.com/USER/REPO")
+#' @examples icon_link("fab fa-github", "materials", "https://github.com/USER/REPO")
 icon_link <- function(icon = NULL, text = NULL, url = NULL) {
   if (!is.null(icon)) {
     text <- make_icon_text(icon, text)
