@@ -7,9 +7,9 @@ First of all, thanks for considering contributing to `distilltools`! 👍 It's p
 [repo]: https://github.com/EllaKaye/`distilltools`
 [issues]: https://github.com/EllaKaye/`distilltools`/issues
 [new_issue]: https://github.com/EllaKaye/`distilltools`/issues/new
-[website]: COMING SOON!
-[citation]: COMING SOON!
-[email]: mailto::ella.kaye@gmail.com
+[website]: 
+[citation]: 
+[email]: mailto:ella.kaye@gmail.coms
 
 ## Code of conduct
 
