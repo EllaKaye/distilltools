@@ -17,7 +17,7 @@ icon_link(icon = NULL, text = NULL, url = NULL)
 \item{url}{A url for where the button should link to}
 }
 \value{
-For \code{make_icon}, a \code{shiny.tag} with the HTML \verb{<i class = "icon"></i>}. For \code{icon_link}, a \code{shiny.tag} with the HTML \verb{<a href=url class="icon-link"><i class=icon></i> text</a>}
+For \code{make_icon}, a \code{shiny.tag} with the HTML \verb{<i class = "icon"></i>}. For \code{icon_link}, a \code{shiny.tag} with the HTML \verb{<a href=url class="icon-link" target = "_blank" rel = "noopener"><i class=icon></i> text</a>}
 }
 \description{
 Easily insert "buttons" with an icon and text into .Rmd documents
