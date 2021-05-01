@@ -13,16 +13,7 @@ remotes::install_github("EllaKaye/distilltools")
 
 There are currently three functions in `distilltools`:
 
-- `icon_link()` : creates the html for a link button with icon and text, e.g.
-
-```
-icon_link(
-  icon = "fab fa-github", 
-  text = "materials", 
-  url = "https://github.com/USER/REPO"
-)
-```
-will produce the html `<a href="https://github.com/USER/REPO" class="icon-link" target = "_blank" rel = "noopener"><i class="fab fa-github></i> materials</a>`. Output of `icon_link` will need styling via the `icon-link` class to make it look like a button. For more details on this function, see [this blog post](https://www.jhelvy.com/posts/2021-03-25-customizing-distill-with-htmltools-and-css/#link-buttons-with-icons-text) from John Paul Helveston. For examples of styling the `icon-link` class, see [John Paul Helveston's css](https://github.com/jhelvy/jhelvy.com/blob/master/css/jhelvy.css) and [my css](https://github.com/EllaKaye/ellakaye-distill/blob/main/ek_theme.css).
+- `icon_link()` : creates the html for a link button with icon and text. Output of `icon_link` will need styling via the `icon-link` class to make it look like a button. For more details on this function, see [this blog post](https://www.jhelvy.com/posts/2021-03-25-customizing-distill-with-htmltools-and-css/#link-buttons-with-icons-text) from John Paul Helveston. For examples of styling the `icon-link` class, see [John Paul Helveston's css](https://github.com/jhelvy/jhelvy.com/blob/master/css/jhelvy.css) and [my css](https://github.com/EllaKaye/ellakaye-distill/blob/main/ek_theme.css).
 
 - `create_talk()`: a wrapper around `distill::create_post()` that creates a post in the talk directory and includes buttons (made with `icon-link()`) for slides (both web and pdf), material, video and project. These can easily be edited in the resulting .Rmd file. This function was inspired by [Eric Ekholm's blog post](https://www.ericekholm.com/posts/2021-04-02-personalizing-the-distill-template/).
 
