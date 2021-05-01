@@ -1,3 +1,5 @@
+# Overview
+
 `distilltools` is collection of tools to support the creation and styling of content on websites created using the [distill](https://rstudio.github.io/distill/) package in R.
 
 It is in the very early stages of development. I am actively seeking contributions - both ideas and code - to help build the package to be broadly useful to a wide variety of `distill` users. I hope in time that `distilltools` can be for distill something like what [xaringanExtra](https://pkg.garrickadenbuie.com/xaringanExtra/#/) and [xaringanthemer](https://pkg.garrickadenbuie.com/xaringanthemer/) are for [xaringan](https://github.com/yihui/xaringan). Some of what I have in mind may sit better within the distill package itself, and I will be reaching out to the distill team about that.
@@ -34,7 +36,7 @@ I'm actively seeking contributions:
 - Do you have a `distill` website? If so, what tools would you help you in the creation, upkeep and styling of your site?
 - Do you have personal functions that you've written for your `distill` workflow? If they help you, they'll almost certainly be helpful to others to. Consider submitting (generalised) versions of them for inclusion in `distilltools`!
 
-There are lots of other ways to support and contribute to `distilltools`. Please see the [contributing guide](.github/CONTRIBUTING) for more details.
+There are lots of other ways to support and contribute to `distilltools`. Please see the [contributing guide](.github/CONTRIBUTING.md) for more details.
 
 ## Code of Conduct
 
