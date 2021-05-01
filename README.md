@@ -11,7 +11,7 @@ It is in the very early stages of development. I am actively seeking contributio
 remotes::install_github("EllaKaye/distilltools")
 ```
 
-# Current functionality
+# Functionality
 
 There are currently three functions in `distilltools`:
 
@@ -28,6 +28,13 @@ will produce the html `<a href="https://github.com/USER/REPO" class="icon-link" 
 - `create_talk()`: a wrapper around `distill::create_post()` that creates a post in the talk directory and includes buttons (made with `icon-link()`) for slides (both web and pdf), material, video and project. These can easily be edited in the resulting .Rmd file. This function was inspired by [Eric Ekholm's blog post](https://www.ericekholm.com/posts/2021-04-02-personalizing-the-distill-template/).
 
 - `create_post_from_template()`: this function operates almost identically to `distill::create_post()` except for the addition of a `path` argument, which allows the user to pass in a path to an .Rmd file that can be used as a template for the post. 
+
+## Future functionality
+
+Plans for future functionality include:
+
+- `create_highlight_theme()`. The `distill::create_theme()` function is a great way to style a distill website. Moreover, the default distill highlighting theme is excellent, and designed for accessibility. There are a few other highlighting syntax styles that can also be chosen. However, if you want a custom syntax highlighting theme (particularly one that goes with your new beautifully styled website), that is trickier. I plan to write a function to ease that process.
+- incorporating more of [John Paul Helveston's functions](https://github.com/jhelvy/jhelvy.com/blob/master/R/functions.R)
 
 # Contributing to `distilltools` 
 
