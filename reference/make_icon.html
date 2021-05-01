@@ -140,7 +140,7 @@
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>For <code>make_icon</code>, a <code>shiny.tag</code> with the HTML <code>&lt;i class = "icon"&gt;&lt;/i&gt;</code>. For <code>icon_link</code>, a <code>shiny.tag</code> with the HTML <code>&lt;a href=url class="icon-link"&gt;&lt;i class=icon&gt;&lt;/i&gt; text&lt;/a&gt;</code></p>
+    <p>For <code>make_icon</code>, a <code>shiny.tag</code> with the HTML <code>&lt;i class = "icon"&gt;&lt;/i&gt;</code>. For <code>icon_link</code>, a <code>shiny.tag</code> with the HTML <code>&lt;a href=url class="icon-link" target = "_blank" rel = "noopener"&gt;&lt;i class=icon&gt;&lt;/i&gt; text&lt;/a&gt;</code></p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>Note that it will be necessary to add some CSS to in order to make the "buttons" look like buttons. For the <code>icon_link</code> function, this can be done by styling the <code>icon-link</code> class. At a minimum, a border property should be set. For a <code>distill</code> website, we recommend using the <code><a href='https://pkgs.rstudio.com/distill/reference/create_theme.html'>distill::create_theme</a></code> function and writing additional CSS at the bottom of that file. See <a href='https://rstudio.github.io/distill/website.html#theming'>here</a> for details of how to implement that. See <a href='https://github.com/jhelvy/jhelvy.com/blob/master/css/jhelvy.css'>here</a> and <a href='https://github.com/EllaKaye/ellakaye-distill/blob/main/emk_theme.css'>here</a> for examples.</p>
