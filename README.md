@@ -15,7 +15,7 @@ remotes::install_github("EllaKaye/distilltools")
 
 There are currently three functions in `distilltools`:
 
-- `icon_link()`: creates the html for a link button with icon and text, e.g.
+- [`icon_link()`](https://ellakaye.github.io/distilltools/reference/make_icon.html): creates the html for a link button with icon and text, e.g.
 
 ```
 icon_link(
@@ -25,9 +25,9 @@ icon_link(
 ```
 will produce the html `<a href="https://github.com/USER/REPO" class="icon-link" target = "_blank" rel = "noopener"><i class="fab fa-github></i> materials</a>`. Output of `icon_link` will need styling via the `icon-link` class to make it look like a button. For more details on this function, see [this blog post](https://www.jhelvy.com/posts/2021-03-25-customizing-distill-with-htmltools-and-css/#link-buttons-with-icons-text) from John Paul Helveston. For examples of styling the `icon-link` class, see [John Paul Helveston's css](https://github.com/jhelvy/jhelvy.com/blob/master/css/jhelvy.css) and [my css](https://github.com/EllaKaye/ellakaye-distill/blob/main/ek_theme.css).
 
-- `create_talk()`: a wrapper around `distill::create_post()` that creates a post in the talk directory and includes buttons (made with `icon-link()`) for slides (both web and pdf), material, video and project. These can easily be edited in the resulting .Rmd file. This function was inspired by [Eric Ekholm's blog post](https://www.ericekholm.com/posts/2021-04-02-personalizing-the-distill-template/).
+- [`create_talk()`](https://ellakaye.github.io/distilltools/reference/create_talk.html): a wrapper around `distill::create_post()` that creates a post in the talk directory and includes buttons (made with `icon-link()`) for slides (both web and pdf), material, video and project. These can easily be edited in the resulting .Rmd file. This function was inspired by [Eric Ekholm's blog post](https://www.ericekholm.com/posts/2021-04-02-personalizing-the-distill-template/).
 
-- `create_post_from_template()`: this function operates almost identically to `distill::create_post()` except for the addition of a `path` argument, which allows the user to pass in a path to an .Rmd file that can be used as a template for the post. 
+- [`create_post_from_template()`](https://ellakaye.github.io/distilltools/reference/create_post_from_template.html): this function operates almost identically to `distill::create_post()` except for the addition of a `path` argument, which allows the user to pass in a path to an .Rmd file that can be used as a template for the post. 
 
 ## Future functionality
 
