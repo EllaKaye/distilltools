@@ -29,6 +29,8 @@ will produce the html `<a href="https://github.com/USER/REPO" class="icon-link" 
 
 - `create_post_from_template()`: this function operates almost identically to `distill::create_post()` except for the addition of a `path` argument, which allows the user to pass in a path to an .Rmd file that can be used as a template for the post. 
 
+## Future functionality
+
 Plans for future functionality include:
 
 - `create_highlight_theme()`. The `distill::create_theme()` function is a great way to style a distill website. Moreover, the default distill highlighting theme is excellent, and designed for accessibility. There are a few other highlighting syntax styles that can also be chosen. However, if you want a custom syntax highlighting theme (particularly one that goes with your new beautifully styled website), that is trickier. I plan to write a function to ease that process.
