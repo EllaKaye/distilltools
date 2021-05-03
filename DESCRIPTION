@@ -26,3 +26,5 @@ Imports:
     usethis,
     xfun (>= 0.2),
     yaml
+Depends: 
+    R (>= 2.10)
