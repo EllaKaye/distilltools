@@ -43,7 +43,7 @@ make_icon <- function(icon, style = "default") {
 
         # if style is specified, check that the specified style is available for the icon
         if (style != "default" & !(style %in% icons$style)) {
-          stop(paste0("style '", style, "' is not available for icon '", icon, "'"))
+          warning(paste0("style '", style, "' is not available for icon '", icon, "'"))
         }
 
         # default to picking the `solid` one if user hasn't specified style
