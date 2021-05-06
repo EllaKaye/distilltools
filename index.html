@@ -102,13 +102,17 @@
 <!-- badges: start -->
 <!-- badges: end -->
 <p><code>distilltools</code> is collection of tools to support the creation and styling of content on websites created using the <a href="https://rstudio.github.io/distill/">distill</a> package in R.</p>
-<p>It is in the very early stages of development. I am actively seeking contributions - both ideas and code - to help build the package to be broadly useful to a wide variety of <code>distill</code> users. I hope in time that <code>distilltools</code> can be for distill something like what <a href="https://pkg.garrickadenbuie.com/xaringanExtra/#/">xaringanExtra</a> and <a href="https://pkg.garrickadenbuie.com/xaringanthemer/">xaringanthemer</a> are for <a href="https://github.com/yihui/xaringan">xaringan</a>. Some of what I have in mind may sit better within the distill package itself, and I will be reaching out to the distill team about that.</p>
+<p>It is in the very early stages of development. I am actively seeking contributions - both ideas and code - to help build the package to be broadly useful to a wide variety of <code>distill</code> users. The idea is for the package to become a curated, collaborative, community-driven project. In terms of relationship between packages, I hope in time that <code>distilltools</code> can be for distill something like what <a href="https://pkg.garrickadenbuie.com/xaringanExtra/#/">xaringanExtra</a> and <a href="https://pkg.garrickadenbuie.com/xaringanthemer/">xaringanthemer</a> are for <a href="https://github.com/yihui/xaringan">xaringan</a>. Some of what I have in mind may sit better within the distill package itself, and I will be reaching out to the distill team about that.</p>
 </div>
 <div id="installation" class="section level1">
 <h1 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h1>
 <div class="sourceCode" id="cb1"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># install.packages("remotes")</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a>remotes<span class="op">::</span><span class="kw">install_github</span>(<span class="st">"EllaKaye/distilltools"</span>)</span></code></pre></div>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="co"># requires remotes &gt;= 2.2</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a>remotes<span class="op">::</span><span class="kw">install_github</span>(<span class="st">"EllaKaye/distilltools"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4"></a></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="co"># for remotes &lt; 2.2</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a>remotes<span class="op">::</span><span class="kw">install_github</span>(<span class="st">"EllaKaye/distilltools"</span>, <span class="dt">ref =</span> <span class="st">"main"</span>)</span></code></pre></div>
 </div>
 <div id="functionality" class="section level1">
 <h1 class="hasAnchor">
@@ -116,7 +120,7 @@
 <p>There are currently three functions in <code>distilltools</code>:</p>
 <ul>
 <li>
-<code><a href="reference/make_icon.html">icon_link()</a></code> : creates the html for a link button with icon and text. Output of <code>icon_link</code> will need styling via the <code>icon-link</code> class to make it look like a button. For more details on this function, see <a href="https://www.jhelvy.com/posts/2021-03-25-customizing-distill-with-htmltools-and-css/#link-buttons-with-icons-text">this blog post</a> from John Paul Helveston. For examples of styling the <code>icon-link</code> class, see <a href="https://github.com/jhelvy/jhelvy.com/blob/master/css/jhelvy.css">John Paul Helveston’s css</a> and <a href="https://github.com/EllaKaye/ellakaye-distill/blob/main/ek_theme.css">my css</a>.</li>
+<code><a href="reference/make_icon.html">icon_link()</a></code> : creates the html for a link button with icon and text. Output of <code>icon_link</code> will need styling via the <code>icon-link</code> class to make it look like a button. For more details on this function, see <a href="https://www.jhelvy.com/posts/2021-03-25-customizing-distill-with-htmltools-and-css/#link-buttons-with-icons-text">this blog post</a> from John Paul Helveston. For examples of styling the <code>icon-link</code> class, see <a href="https://github.com/jhelvy/jhelvy.com/blob/master/css/jhelvy.css">John Paul Helveston’s css</a> and <a href="https://github.com/EllaKaye/ellakaye-distill/blob/main/ek_theme.css">Ella Kaye’s css</a>.</li>
 <li>
 <code><a href="reference/create_talk.html">create_talk()</a></code>: a wrapper around <code><a href="https://pkgs.rstudio.com/distill/reference/create_post.html">distill::create_post()</a></code> that creates a post in the talk directory and includes buttons (made with <code>icon-link()</code>) for slides (both web and pdf), material, video and project. These can easily be edited in the resulting .Rmd file. This function was inspired by <a href="https://www.ericekholm.com/posts/2021-04-02-personalizing-the-distill-template/">Eric Ekholm’s blog post</a>.</li>
 <li>
