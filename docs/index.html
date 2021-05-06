@@ -19,6 +19,12 @@
     );
   }
 </script><title>A collection of tools to assist in the building and styling of {distill} websites • distilltools</title>
+<!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="apple-touch-icon-60x60.png">
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- Flatly Theme - Light  --><link id="css-light" rel="stylesheet" href="https://bootswatch.com/3/flatly/bootstrap.css" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)">
 <!-- Darkly Theme - Dark --><link id="css-dark" rel="stylesheet" href="https://bootswatch.com/3/darkly/bootstrap.css" media="(prefers-color-scheme: dark)">
 <!-- preferably CSS --><link rel="stylesheet" href="preferably.css">
@@ -30,6 +36,7 @@
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
 <script src="pkgdown.js"></script><meta property="og:title" content="A collection of tools to assist in the building and styling of {distill} websites">
 <meta property="og:description" content="A collection of tools to assist in the building and styling of {distill} websites">
+<meta property="og:image" content="/logo.png">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -88,27 +95,36 @@
       </header><div class="row">
   <div class="contents col-md-9">
 
-<div id="distilltools" class="section level1">
+<div id="distilltools-" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#distilltools" class="anchor"></a><code>distilltools</code>
+<a href="#distilltools-" class="anchor"></a>distilltools <a href="https://github.com/EllaKaye/distilltools"><img src="reference/figures/logo.png" align="right" height="139"></a>
 </h1></div>
+<!-- badges: start -->
+<!-- badges: end -->
 <p><code>distilltools</code> is collection of tools to support the creation and styling of content on websites created using the <a href="https://rstudio.github.io/distill/">distill</a> package in R.</p>
-<p>It is in the very early stages of development. I am actively seeking contributions - both ideas and code - to help build the package to be broadly useful to a wide variety of <code>distill</code> users. I hope in time that <code>distilltools</code> can be for distill something like what <a href="https://pkg.garrickadenbuie.com/xaringanExtra/#/">xaringanExtra</a> and <a href="https://pkg.garrickadenbuie.com/xaringanthemer/">xaringanthemer</a> are for <a href="https://github.com/yihui/xaringan">xaringan</a>. Some of what I have in mind may sit better within the distill package itself, and I will be reaching out to the distill team about that.</p>
+<p>It is in the very early stages of development. I am actively seeking contributions - both ideas and code - to help build the package to be broadly useful to a wide variety of <code>distill</code> users. The idea is for the package to become a curated, collaborative, community-driven project. In terms of relationship between packages, I hope in time that <code>distilltools</code> can be for distill something like what <a href="https://pkg.garrickadenbuie.com/xaringanExtra/#/">xaringanExtra</a> and <a href="https://pkg.garrickadenbuie.com/xaringanthemer/">xaringanthemer</a> are for <a href="https://github.com/yihui/xaringan">xaringan</a>. Some of what I have in mind may sit better within the distill package itself, and I will be reaching out to the distill team about that.</p>
 </div>
 <div id="installation" class="section level1">
 <h1 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h1>
-<pre><code><a href="https://remotes.r-lib.org/reference/install_github.html"># install.packages("remotes")
-remotes::install_github("EllaKaye/distilltools")</a></code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("remotes")</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># requires remotes &gt;= 2.2</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"EllaKaye/distilltools"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># for remotes &lt; 2.2</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"EllaKaye/distilltools"</span>, <span class="at">ref =</span> <span class="st">"main"</span>)</span></code></pre></div>
 </div>
 <div id="functionality" class="section level1">
 <h1 class="hasAnchor">
 <a href="#functionality" class="anchor"></a>Functionality</h1>
 <p>There are currently three functions in <code>distilltools</code>:</p>
 <ul>
-<li><p><code><a href="reference/make_icon.html">icon_link()</a></code> : creates the html for a link button with icon and text. Output of <code>icon_link</code> will need styling via the <code>icon-link</code> class to make it look like a button. For more details on this function, see <a href="https://www.jhelvy.com/posts/2021-03-25-customizing-distill-with-htmltools-and-css/#link-buttons-with-icons-text">this blog post</a> from John Paul Helveston. For examples of styling the <code>icon-link</code> class, see <a href="https://github.com/jhelvy/jhelvy.com/blob/master/css/jhelvy.css">John Paul Helveston’s css</a> and <a href="https://github.com/EllaKaye/ellakaye-distill/blob/main/ek_theme.css">my css</a>.</p></li>
-<li><p><code><a href="reference/create_talk.html">create_talk()</a></code>: a wrapper around <code><a href="https://pkgs.rstudio.com/distill/reference/create_post.html">distill::create_post()</a></code> that creates a post in the talk directory and includes buttons (made with <code>icon-link()</code>) for slides (both web and pdf), material, video and project. These can easily be edited in the resulting .Rmd file. This function was inspired by <a href="https://www.ericekholm.com/posts/2021-04-02-personalizing-the-distill-template/">Eric Ekholm’s blog post</a>.</p></li>
-<li><p><code><a href="reference/create_post_from_template.html">create_post_from_template()</a></code>: this function operates almost identically to <code><a href="https://pkgs.rstudio.com/distill/reference/create_post.html">distill::create_post()</a></code> except for the addition of a <code>path</code> argument, which allows the user to pass in a path to an .Rmd file that can be used as a template for the post.</p></li>
+<li>
+<code><a href="reference/make_icon.html">icon_link()</a></code> : creates the html for a link button with icon and text. Output of <code>icon_link</code> will need styling via the <code>icon-link</code> class to make it look like a button. For more details on this function, see <a href="https://www.jhelvy.com/posts/2021-03-25-customizing-distill-with-htmltools-and-css/#link-buttons-with-icons-text">this blog post</a> from John Paul Helveston. For examples of styling the <code>icon-link</code> class, see <a href="https://github.com/jhelvy/jhelvy.com/blob/master/css/jhelvy.css">John Paul Helveston’s css</a> and <a href="https://github.com/EllaKaye/ellakaye-distill/blob/main/ek_theme.css">Ella Kaye’s css</a>.</li>
+<li>
+<code><a href="reference/create_talk.html">create_talk()</a></code>: a wrapper around <code><a href="https://pkgs.rstudio.com/distill/reference/create_post.html">distill::create_post()</a></code> that creates a post in the talk directory and includes buttons (made with <code>icon-link()</code>) for slides (both web and pdf), material, video and project. These can easily be edited in the resulting .Rmd file. This function was inspired by <a href="https://www.ericekholm.com/posts/2021-04-02-personalizing-the-distill-template/">Eric Ekholm’s blog post</a>.</li>
+<li>
+<code><a href="reference/create_post_from_template.html">create_post_from_template()</a></code>: this function operates almost identically to <code><a href="https://pkgs.rstudio.com/distill/reference/create_post.html">distill::create_post()</a></code> except for the addition of a <code>path</code> argument, which allows the user to pass in a path to an .Rmd file that can be used as a template for the post.</li>
 </ul>
 <div id="future-functionality" class="section level2">
 <h2 class="hasAnchor">
@@ -125,10 +141,10 @@ remotes::install_github("EllaKaye/distilltools")</a></code></pre>
 <h1 class="hasAnchor">
 <a href="#contributing-to-distilltools" class="anchor"></a>Contributing to <code>distilltools</code>
 </h1>
-<p>I’m actively seeking contributions:</p>
+<p>We’re actively seeking contributions!</p>
 <ul>
-<li>Do you have a <code>distill</code> website? If so, what tools would you help you in the creation, upkeep and styling of your site?</li>
-<li>Do you have personal functions that you’ve written for your <code>distill</code> workflow? If they help you, they’ll almost certainly be helpful to others to. Consider submitting (generalised) versions of them for inclusion in <code>distilltools</code>!</li>
+<li>Do you have a <code>distill</code> website? If so, what tools would you help you in the creation, upkeep and styling of your site? Let us know by with an <a href="https://github.com/EllaKaye/distilltools/issues">issue</a>.</li>
+<li>Do you have functions that you’ve written for your <code>distill</code> workflow? If they help you, they’ll almost certainly be helpful to others to. Consider submitting (generalized) versions of them for inclusion in <code>distilltools</code>!</li>
 </ul>
 <p>There are lots of other ways to support and contribute to <code>distilltools</code>. Please see the <a href="CONTRIBUTING.html">contributing guide</a> for more details.</p>
 <div id="code-of-conduct" class="section level2">
