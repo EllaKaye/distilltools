@@ -4,7 +4,6 @@
 # distilltools <a href="https://github.com/EllaKaye/distilltools"><img src='man/figures/logo.png' align="right" height="139" /></a>
 
 <!-- badges: start -->
-
 <!-- badges: end -->
 
 `distilltools` is collection of tools to support the creation and
@@ -13,7 +12,9 @@ styling of content on websites created using the
 
 It is in the very early stages of development. I am actively seeking
 contributions - both ideas and code - to help build the package to be
-broadly useful to a wide variety of `distill` users. I hope in time that
+broadly useful to a wide variety of `distill` users. The idea is for the
+package to become a curated, collaborative, community-driven project. In
+terms of relationship between packages, I hope in time that
 `distilltools` can be for distill something like what
 [xaringanExtra](https://pkg.garrickadenbuie.com/xaringanExtra/#/) and
 [xaringanthemer](https://pkg.garrickadenbuie.com/xaringanthemer/) are
@@ -24,13 +25,17 @@ reaching out to the distill team about that.
 # Installation
 
     # install.packages("remotes")
+    # requires remotes >= 2.2
     remotes::install_github("EllaKaye/distilltools")
+
+    # for remotes < 2.2
+    remotes::install_github("EllaKaye/distilltools", ref = "main")
 
 # Functionality
 
 There are currently three functions in `distilltools`:
 
-  - `icon_link()` : creates the html for a link button with icon and
+-   `icon_link()` : creates the html for a link button with icon and
     text. Output of `icon_link` will need styling via the `icon-link`
     class to make it look like a button. For more details on this
     function, see [this blog
@@ -38,15 +43,15 @@ There are currently three functions in `distilltools`:
     from John Paul Helveston. For examples of styling the `icon-link`
     class, see [John Paul Helveston’s
     css](https://github.com/jhelvy/jhelvy.com/blob/master/css/jhelvy.css)
-    and [my
+    and [Ella Kaye’s
     css](https://github.com/EllaKaye/ellakaye-distill/blob/main/ek_theme.css).
-  - `create_talk()`: a wrapper around `distill::create_post()` that
+-   `create_talk()`: a wrapper around `distill::create_post()` that
     creates a post in the talk directory and includes buttons (made with
     `icon-link()`) for slides (both web and pdf), material, video and
     project. These can easily be edited in the resulting .Rmd file. This
     function was inspired by [Eric Ekholm’s blog
     post](https://www.ericekholm.com/posts/2021-04-02-personalizing-the-distill-template/).
-  - `create_post_from_template()`: this function operates almost
+-   `create_post_from_template()`: this function operates almost
     identically to `distill::create_post()` except for the addition of a
     `path` argument, which allows the user to pass in a path to an .Rmd
     file that can be used as a template for the post.
@@ -55,7 +60,7 @@ There are currently three functions in `distilltools`:
 
 Plans for future functionality include:
 
-  - `create_highlight_theme()`. The `distill::create_theme()` function
+-   `create_highlight_theme()`. The `distill::create_theme()` function
     is a great way to style a distill website. Moreover, the default
     distill highlighting theme is excellent, and designed for
     accessibility. There are a few other highlighting syntax styles that
@@ -63,20 +68,20 @@ Plans for future functionality include:
     highlighting theme (particularly one that goes with your new
     beautifully styled website), that is trickier. I plan to write a
     function to ease that process.
-  - incorporating more of [John Paul Helveston’s
+-   incorporating more of [John Paul Helveston’s
     functions](https://github.com/jhelvy/jhelvy.com/blob/master/R/functions.R).
 
 # Contributing to `distilltools`
 
-We’re actively seeking contributions\!
+We’re actively seeking contributions!
 
-  - Do you have a `distill` website? If so, what tools would you help
+-   Do you have a `distill` website? If so, what tools would you help
     you in the creation, upkeep and styling of your site? Let us know by
     with an [issue](https://github.com/EllaKaye/distilltools/issues).
-  - Do you have functions that you’ve written for your `distill`
+-   Do you have functions that you’ve written for your `distill`
     workflow? If they help you, they’ll almost certainly be helpful to
     others to. Consider submitting (generalized) versions of them for
-    inclusion in `distilltools`\!
+    inclusion in `distilltools`!
 
 There are lots of other ways to support and contribute to
 `distilltools`. Please see the [contributing
