@@ -1,0 +1,9 @@
+Name: Add Post
+Description: Add Distill Post.
+Binding: addPost
+Interactive: false
+
+Name: Make See Icon
+Description: Make See Icon.
+Binding: makeSeeIcon
+Interactive: false

@@ -1,7 +1,7 @@
 Package: distilltools
 Type: Package
 Title: A collection of tools to assist in the creating and styling of content on {distill} websites
-Version: 0.0.0.9000
+Version: 0.0.0.9002
 Authors@R: c(
   person("Ella", "Kaye", email = "E.Kaye.1@warwick.ac.uk", role = c("aut", "cre")),
   person("John Paul", "Helveston", role = c("aut")))
@@ -23,6 +23,11 @@ Imports:
     rmarkdown (>= 2.6),
     rprojroot,
     rstudioapi,
+    shiny,
+    miniUI,
+    blogdown,
+    glue,
+    shinyWidgets,
     usethis,
     xfun (>= 0.2),
     yaml
