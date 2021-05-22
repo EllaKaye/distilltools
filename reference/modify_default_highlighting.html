@@ -22,7 +22,7 @@
   }
 </script>
 
-<title>Link "buttons" with icons and text — make_icon • distilltools</title>
+<title>Modify the default distill syntax highlighting theme — modify_default_highlighting • distilltools</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -72,8 +72,8 @@
 
 
 
-<meta property="og:title" content="Link "buttons" with icons and text — make_icon" />
-<meta property="og:description" content="Easily insert &quot;buttons&quot; with an icon and text into .Rmd documents" />
+<meta property="og:title" content="Modify the default distill syntax highlighting theme — modify_default_highlighting" />
+<meta property="og:description" content="Create a syntax highlighting theme by modifying the default from the {distill} package and write it to the current working directory." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -150,60 +150,99 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Link "buttons" with icons and text</h1>
-    <small class="dont-index">Source: <a href='https://github.com/EllaKaye/distilltools/blob/master/R/icons.R'><code>R/icons.R</code></a></small>
-    <div class="hidden name"><code>icon_link.Rd</code></div>
+    <h1>Modify the default distill syntax highlighting theme</h1>
+    <small class="dont-index">Source: <a href='https://github.com/EllaKaye/distilltools/blob/master/R/modify_default_highlighting.R'><code>R/modify_default_highlighting.R</code></a></small>
+    <div class="hidden name"><code>modify_default_highlighting.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Easily insert "buttons" with an icon and text into .Rmd documents</p>
+    <p>Create a syntax highlighting theme by modifying the default from the {distill} package and write it to the current working directory.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>make_icon</span><span class='op'>(</span><span class='va'>icon</span>, style <span class='op'>=</span> <span class='st'>"default"</span><span class='op'>)</span>
-
-<span class='fu'>icon_link</span><span class='op'>(</span>icon <span class='op'>=</span> <span class='cn'>NULL</span>, text <span class='op'>=</span> <span class='cn'>NULL</span>, url <span class='op'>=</span> <span class='cn'>NULL</span>, style <span class='op'>=</span> <span class='st'>"default"</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>modify_default_highlighting</span><span class='op'>(</span>
+  name <span class='op'>=</span> <span class='st'>"highlighting"</span>,
+  numbers <span class='op'>=</span> <span class='cn'>NULL</span>,
+  strings <span class='op'>=</span> <span class='cn'>NULL</span>,
+  functions <span class='op'>=</span> <span class='cn'>NULL</span>,
+  control <span class='op'>=</span> <span class='cn'>NULL</span>,
+  constant <span class='op'>=</span> <span class='cn'>NULL</span>,
+  overwrite <span class='op'>=</span> <span class='cn'>TRUE</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>icon</th>
-      <td><p>The name of the icon. For Font Awesome icons, the name should correspond to the current Version 5 name and can either be the the short name (e.g. <code>"github"</code>) or the full name (e.g. <code>"fab fa-github"</code>). <a href='https://jpswalsh.github.io/academicons/'>Academicons</a> can also be used and styled the same way (e.g. <code>"google-scholar"</code> or <code>"ai ai-google-scholar"</code>) but require a site header. See <a href='https://www.jhelvy.com/posts/2021-03-25-customizing-distill-with-htmltools-and-css/#side-note-on-academic-icons'>here</a> for details.</p></td>
+      <th>name</th>
+      <td><p>Name of the theme file (will be written as name.theme)</p></td>
     </tr>
     <tr>
-      <th>style</th>
-      <td><p>The style of the font awesome icon, which can be "default", "solid" or "regular". This parameter is only used when the short name of the icon is used in the <code>icon</code> argument and there is more than one style available for that icon. In that case, the default becomes "solid".</p></td>
+      <th>numbers</th>
+      <td><p>Colour for numbers. Must be either a named colour in <code><a href='https://rdrr.io/r/grDevices/colors.html'>grDevices::colors()</a></code> or of the hex form "#RRBBGG". Default is red "#AD0000" (approx "Bright Red").</p></td>
     </tr>
     <tr>
-      <th>text</th>
-      <td><p>A string of the text to appear on the button</p></td>
+      <th>strings</th>
+      <td><p>Colour for strings. Must be either a named colour in <code><a href='https://rdrr.io/r/grDevices/colors.html'>grDevices::colors()</a></code> or of the hex form "#RRBBGG". Default is green "#20794D" (approx "Eucalyptus").</p></td>
     </tr>
     <tr>
-      <th>url</th>
-      <td><p>A url for where the button should link to</p></td>
+      <th>functions</th>
+      <td><p>Colour for function names. Must be either a named colour in <code><a href='https://rdrr.io/r/grDevices/colors.html'>grDevices::colors()</a></code> or of the hex form "#RRBBGG". Default is purple "#4758AB" (approx "San Marino").</p></td>
+    </tr>
+    <tr>
+      <th>control</th>
+      <td><p>Colour for control (e.g. <code>if</code>, <code>while</code>). Must be either a named colour in <code><a href='https://rdrr.io/r/grDevices/colors.html'>grDevices::colors()</a></code> or of the hex form "#RRBBGG". Default is blue "#007BA5" (approx "Deep Cerulean").</p></td>
+    </tr>
+    <tr>
+      <th>constant</th>
+      <td><p>Colour for constants (e.g. <code>TRUE</code>, <code>NULL</code>). Must be either a named colour in <code><a href='https://rdrr.io/r/grDevices/colors.html'>grDevices::colors()</a></code> or of the hex form "#RRBBGG". Default is brown "#8F5902" (approx "Chelsea Gem").</p></td>
+    </tr>
+    <tr>
+      <th>overwrite</th>
+      <td><p>logical. If <code>TRUE</code> (default), will overwrite <code>name.theme</code> if it already exists in the working directory.</p></td>
     </tr>
     </table>
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>For <code>make_icon</code>, a <code>shiny.tag</code> with the HTML <code>&lt;i class = "icon"&gt;&lt;/i&gt;</code>. For <code>icon_link</code>, a <code>shiny.tag</code> with the HTML <code>&lt;a href=url class="icon-link" target = "_blank" rel = "noopener"&gt;&lt;i class=icon&gt;&lt;/i&gt; text&lt;/a&gt;</code></p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>Note that it will be necessary to add some CSS to in order to make the "buttons" look like buttons. For the <code>icon_link</code> function, this can be done by styling the <code>icon-link</code> class. At a minimum, a border property should be set. For a <code>distill</code> website, we recommend using the <code><a href='https://pkgs.rstudio.com/distill/reference/create_theme.html'>distill::create_theme()</a></code> function and writing additional CSS at the bottom of that file. See <a href='https://rstudio.github.io/distill/website.html#theming'>here</a> for details of how to implement that. See <a href='https://github.com/jhelvy/jhelvy.com/blob/master/css/jhelvy.css'>here</a> and <a href='https://github.com/EllaKaye/ellakaye-distill/blob/main/emk_theme.css'>here</a> for examples.</p>
-<p>The <code>make_icon</code> function returns an <code>&lt;i&gt;</code> tag, rather than the svg of the icon. This function is designed primarily to be called within <code>icon_link</code>, so we use the tag rather than the image directly to enable styling by css (in particular that the icon styling can change if hovered over). If you wish to insert an icon directly into your text or into a site header or footer, we recommend using a package that inserts the svg, such as <a href='https://rstudio.github.io/fontawesome/'><strong>fontawesome</strong></a> or <a href='https://pkg.mitchelloharawild.com/icons/'><strong>icons</strong></a>. This ensures that the icons render offline, and there are also additional styling options available.</p>
-<p>There are three short icon names that appear in both font awesome and academicons. They are "mendeley", "orcid" and "researchgate". These functions default to the font awesome versions (since font awesome should work out-the-box with <code>distill</code> whereas academicons needs the stylesheet adding - see above), but the academicon versions can be accessed by using their full name, e.g. <code>"ai ai-orcid"</code>. Note that in early testing the font awesome icons for "orcid" and "mendeley" were troublesome for one of the authors, but the academicon versions worked fine.</p>
-    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+    <p>This is function modifies the default syntax highlighting theme from the {distill} package by replacing the five colours used in that scheme with colours of the user's choosing. It is <em>not</em> a fully-featured function to create a theme from scratch. However, it does place a <code>.theme</code> file in your working directory which can be further modified if more customisations are desired. Note that if a hex code in the default is replaced with another hex code, that change in colour is applied. However, if a <code>null</code> in the default is replaced with a hex code, that colour does <em>not</em> show up when the theme is applied.</p>
+<p>We strongly recommend that when users choose colours for the syntax highlighting theme to be applied to their Distill website/blog, they take WCAG guidelines for web accessibility into account by ensuring that the colour contrast ratio between each of the colours used and background colour is at least 4.5:1. This can be checked with a tool such as <a href='https://webaim.org/resources/contrastchecker/'>WebAIM contrast checker</a> or in R with <code>savonliquide::check_contrast()</code> or the <code>cr_get_ratio()</code> function from the <a href='https://github.com/matt-dray/coloratio'><code>coloratio</code></a> package, available on GitHub. We also recommend checking that your palette is colourblind-friendly, for example by using <code>prismatic::check_color_blindness()</code> function.</p>
+<p>There are two ways to apply a custom syntax highlighting scheme to a
+Distill site or blog:</p><ol>
+<li><p>Apply it site-wide by adding a <code>theme</code> key to the top-level of your
+<code>_site.yml</code> configuration file (assuming the theme file is in your
+root directory):<div class="yaml"></p><pre><span class='va'>output</span><span class='op'>:</span>
+  <span class='fu'>distill</span><span class='fu'>::</span><span class='va'><a href='https://pkgs.rstudio.com/distill/reference/distill_article.html'>distill_article</a></span><span class='op'>:</span>
+    <span class='va'>highlight</span><span class='op'>:</span> <span class='va'>highlighting.theme</span>
+</pre><p></div></p></li>
+</ol>
 
-    <p>John Paul Helveston and Ella Kaye</p>
+<p>At least, that <em>should</em> work, but isn’t for the author at the time of
+writing. There is an open
+<a href='https://github.com/rstudio/distill/issues/370'>issue</a> about this.</p><ol>
+<li><p>Apply to an individual article by adding a <code>theme</code> key to your
+article’s YAML front-matter, using the full path (assuming that the
+<code>.theme</code> file is in the site root directory), e.g.:<div class="yaml"></p><pre>---
+title: "My Highlighting Theme"
+output:
+  distill::distill_article:
+    highlight: /Users/USER/WEBSITE/highlighting.theme
+---
+</pre><p></div></p></li>
+</ol>
+
+<p>The second option allows for you to apply your theme to individual
+articles, while using a different theme for the rest of your site. Note
+that this is only possible for stand-alone articles within a website —
+you cannot apply a theme to individual blog posts <em>only</em>.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>make_icon</span><span class='op'>(</span><span class='st'>"images"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; &lt;i class="fas fa-images"&gt;&lt;/i&gt;</div><div class='input'><span class='fu'>make_icon</span><span class='op'>(</span><span class='st'>"fas fa-images"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; &lt;i class="fas fa-images"&gt;&lt;/i&gt;</div><div class='input'><span class='fu'>make_icon</span><span class='op'>(</span><span class='st'>"far fa-images"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; &lt;i class="far fa-images"&gt;&lt;/i&gt;</div><div class='input'><span class='fu'>make_icon</span><span class='op'>(</span><span class='st'>"images"</span>, style <span class='op'>=</span> <span class='st'>"regular"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; &lt;i class="far fa-images"&gt;&lt;/i&gt;</div><div class='input'><span class='fu'>icon_link</span><span class='op'>(</span><span class='st'>"github"</span>, <span class='st'>"materials"</span>, <span class='st'>"https://github.com/USER/REPO"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; &lt;a href="https://github.com/USER/REPO" class="icon-link" target="_blank" rel="noopener"&gt;&lt;i class="fab fa-github"&gt;&lt;/i&gt; materials&lt;/a&gt;</div><div class='input'><span class='fu'>icon_link</span><span class='op'>(</span><span class='st'>"images"</span>, <span class='st'>"slides"</span>, <span class='st'>"https://USER.github.io/slides"</span>, style <span class='op'>=</span> <span class='st'>"regular"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; &lt;a href="https://USER.github.io/slides" class="icon-link" target="_blank" rel="noopener"&gt;&lt;i class="far fa-images"&gt;&lt;/i&gt; slides&lt;/a&gt;</div></pre>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='fu'>modify_default_highlighting</span><span class='op'>(</span><span class='st'>"my_highlighting"</span>,
+    <span class='st'>"#B6005B"</span>, <span class='st'>"#008643"</span>, <span class='st'>"#005BB6"</span>, <span class='st'>"#5A00B5"</span>, <span class='st'>"#B65B00"</span><span class='op'>)</span>
+<span class='fu'>modify_default_highlighting</span><span class='op'>(</span><span class='st'>"base_cols"</span>,
+    <span class='st'>"red"</span>, <span class='st'>"orange"</span>, <span class='st'>"yellow"</span>, <span class='st'>"green"</span>, <span class='st'>"blue"</span><span class='op'>)</span>
+<span class='op'>}</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
