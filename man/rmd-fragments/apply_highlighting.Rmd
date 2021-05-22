@@ -1,0 +1,24 @@
+There are two ways to apply a custom syntax highlighting scheme to a Distill site or blog:
+
+1.  Apply it site-wide by adding a `theme` key to the top-level of your `_site.yml` configuration file (assuming the theme file is in your root directory):
+
+    ``` {.yaml}
+    output:
+      distill::distill_article:
+        highlight: highlighting.theme
+    ```
+
+At least, that *should* work, but isn't for the author at the time of writing. There is an open [issue](https://github.com/rstudio/distill/issues/370) about this. 
+
+2.  Apply to an individual article by adding a `theme` key to your article's YAML front-matter, using the full path (assuming that the `.theme` file is in the site root directory), e.g.:
+
+    ``` {.yaml}
+    ---
+    title: "My Highlighting Theme"
+    output:
+      distill::distill_article:
+        highlight: /Users/USER/WEBSITE/highlighting.theme
+    ---
+    ```
+
+The second option allows for you to apply your theme to individual articles, while using a different theme for the rest of your site. Note that this is only possible for stand-alone articles within a website --- you cannot apply a theme to individual blog posts *only*.
