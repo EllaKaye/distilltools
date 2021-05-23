@@ -6,7 +6,7 @@
 \usage{
 modify_default_highlighting(
   name = "highlighting",
-  numbers = NULL,
+  numeric = NULL,
   strings = NULL,
   functions = NULL,
   control = NULL,
@@ -17,7 +17,7 @@ modify_default_highlighting(
 \arguments{
 \item{name}{Name of the theme file (will be written as name.theme)}
 
-\item{numbers}{Colour for numbers. Must be either a named colour in \code{\link[grDevices:colors]{grDevices::colors()}} or of the hex form "#RRBBGG". Default is red "#AD0000" (approx "Bright Red").}
+\item{numeric}{Colour for numeric variables. Must be either a named colour in \code{\link[grDevices:colors]{grDevices::colors()}} or of the hex form "#RRBBGG". Default is red "#AD0000" (approx "Bright Red").}
 
 \item{strings}{Colour for strings. Must be either a named colour in \code{\link[grDevices:colors]{grDevices::colors()}} or of the hex form "#RRBBGG". Default is green "#20794D" (approx "Eucalyptus").}
 

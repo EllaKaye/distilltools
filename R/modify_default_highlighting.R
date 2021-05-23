@@ -26,7 +26,7 @@ check_col_arg <- function(col) {
 #' We strongly recommend that when users choose colours for the syntax highlighting theme to be applied to their Distill website/blog, they take WCAG guidelines for web accessibility into account by ensuring that the colour contrast ratio between each of the colours used and background colour is at least 4.5:1. This can be checked with a tool such as [WebAIM contrast checker](https://webaim.org/resources/contrastchecker/) or in R with [savonliquide::check_contrast()] or the `cr_get_ratio()` function from the [`coloratio`](https://github.com/matt-dray/coloratio) package, available on GitHub. We also recommend checking that your palette is colourblind-friendly, for example by using [prismatic::check_color_blindness()] function.
 #'
 #' @param name Name of the theme file (will be written as name.theme)
-#' @param numbers Colour for numbers. Must be either a named colour in [grDevices::colors()] or of the hex form "#RRBBGG". Default is red "#AD0000" (approx "Bright Red").
+#' @param numeric Colour for numeric variables. Must be either a named colour in [grDevices::colors()] or of the hex form "#RRBBGG". Default is red "#AD0000" (approx "Bright Red").
 #' @param strings Colour for strings. Must be either a named colour in [grDevices::colors()] or of the hex form "#RRBBGG". Default is green "#20794D" (approx "Eucalyptus").
 #' @param functions Colour for function names. Must be either a named colour in [grDevices::colors()] or of the hex form "#RRBBGG". Default is purple "#4758AB" (approx "San Marino").
 #' @param control Colour for control (e.g. `if`, `while`). Must be either a named colour in [grDevices::colors()] or of the hex form "#RRBBGG". Default is blue "#007BA5" (approx "Deep Cerulean").
@@ -44,7 +44,7 @@ check_col_arg <- function(col) {
 #'     "red", "orange", "yellow", "green", "blue")
 #' }
 modify_default_highlighting <- function(name = "highlighting",
-                                        numbers = NULL,
+                                        numeric = NULL,
                                         strings = NULL,
                                         functions = NULL,
                                         control = NULL,
@@ -53,9 +53,9 @@ modify_default_highlighting <- function(name = "highlighting",
 
   name_with_ext <- paste0(name, ".theme")
 
-  if (!is.null(numbers)) {
-    check_col_arg(numbers)
-    if (numbers %in% grDevices::colors()) numbers <- col2hex(numbers)
+  if (!is.null(numeric)) {
+    check_col_arg(numeric)
+    if (numeric %in% grDevices::colors()) numeric <- col2hex(numeric)
   }
 
   if (!is.null(strings)) {
@@ -83,7 +83,7 @@ modify_default_highlighting <- function(name = "highlighting",
 
   theme <- readLines(arrow_theme_path)
 
-  if (!is.null(numbers)) theme <- gsub("#AD0000", numbers, theme) # default red
+  if (!is.null(numeric)) theme <- gsub("#AD0000", numeric, theme) # default red
   if (!is.null(strings)) theme <- gsub("#20794D", strings, theme) # default green
   if (!is.null(functions)) theme <- gsub("#4758AB", functions, theme) # default purple
   if (!is.null(control)) theme <- gsub("#007BA5", control, theme) # default blue
@@ -97,11 +97,11 @@ modify_default_highlighting <- function(name = "highlighting",
 
 }
 
-# numbers <- "blue"
+# numeric <- "blue"
 # strings <- "green2"
 # functions <- "#D4006a"
 # control <- NULL
 # constant <- "#cc0000"
 #
-# modify_default_highlighting("my_theme", numbers, strings, functions, control, constant, overwrite = TRUE)
+# modify_default_highlighting("my_theme", numeric, strings, functions, control, constant, overwrite = TRUE)
 
