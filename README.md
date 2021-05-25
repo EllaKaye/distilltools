@@ -33,7 +33,7 @@ reaching out to the distill team about that.
 
 # Functionality
 
-There are currently three functions in `distilltools`:
+There are currently four functions in `distilltools`:
 
 -   `icon_link()` : creates the html for a link button with icon and
     text. Output of `icon_link` will need styling via the `icon-link`
@@ -55,21 +55,19 @@ There are currently three functions in `distilltools`:
     identically to `distill::create_post()` except for the addition of a
     `path` argument, which allows the user to pass in a path to an .Rmd
     file that can be used as a template for the post.
+-   `modify_default_highlighting()`: allows the user to swap the five
+    colours used in {distill}’s default syntax highlighting scheme with
+    five colours of their choice, and saves the resulting `.theme` file
+    into the working directory.
 
 ## Future functionality
 
 Plans for future functionality include:
 
--   `create_highlight_theme()`. The `distill::create_theme()` function
-    is a great way to style a distill website. Moreover, the default
-    distill highlighting theme is excellent, and designed for
-    accessibility. There are a few other highlighting syntax styles that
-    can also be chosen. However, if you want a custom syntax
-    highlighting theme (particularly one that goes with your new
-    beautifully styled website), that is trickier. I plan to write a
-    function to ease that process.
 -   incorporating more of [John Paul Helveston’s
-    functions](https://github.com/jhelvy/jhelvy.com/blob/master/R/functions.R).
+    functions](https://github.com/jhelvy/jhelvy.com/blob/master/R/functions.R)
+-   allowing easy creation and styling of project cards, as on [Ijeamaka
+    Anyene’s site](https://ijeamaka-anyene.netlify.app/projects.html)
 
 # Contributing to `distilltools`
 

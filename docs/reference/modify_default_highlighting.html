@@ -22,7 +22,7 @@
   }
 </script>
 
-<title>Create a new blog post from a template — create_post_from_template • distilltools</title>
+<title>Modify the default distill syntax highlighting theme — modify_default_highlighting • distilltools</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -72,8 +72,8 @@
 
 
 
-<meta property="og:title" content="Create a new blog post from a template — create_post_from_template" />
-<meta property="og:description" content="This function is designed to work as close as possible to distill::create_post() (and draws on a lot of code from that function). The main difference is the compolusary argument path which gives the path of the template to create the post from. All other arguments work the same as distill::create_post() (unless specified in Arguments)." />
+<meta property="og:title" content="Modify the default distill syntax highlighting theme — modify_default_highlighting" />
+<meta property="og:description" content="Create a syntax highlighting theme by modifying the default from the {distill} package and write it to the current working directory." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -150,82 +150,98 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Create a new blog post from a template</h1>
-    <small class="dont-index">Source: <a href='https://github.com/EllaKaye/distilltools/blob/master/R/create_post_from_template.R'><code>R/create_post_from_template.R</code></a></small>
-    <div class="hidden name"><code>create_post_from_template.Rd</code></div>
+    <h1>Modify the default distill syntax highlighting theme</h1>
+    <small class="dont-index">Source: <a href='https://github.com/EllaKaye/distilltools/blob/master/R/modify_default_highlighting.R'><code>R/modify_default_highlighting.R</code></a></small>
+    <div class="hidden name"><code>modify_default_highlighting.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>This function is designed to work as close as possible to <code><a href='https://pkgs.rstudio.com/distill/reference/create_post.html'>distill::create_post()</a></code> (and draws on a lot of code from that function). The main difference is the compolusary argument <code>path</code> which gives the path of the template to create the post from. All other arguments work the same as <code><a href='https://pkgs.rstudio.com/distill/reference/create_post.html'>distill::create_post()</a></code> (unless specified in Arguments).</p>
+    <p>Create a syntax highlighting theme by modifying the default from the {distill} package and write it to the current working directory.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>create_post_from_template</span><span class='op'>(</span>
-  <span class='va'>path</span>,
-  <span class='va'>title</span>,
-  collection <span class='op'>=</span> <span class='st'>"posts"</span>,
-  author <span class='op'>=</span> <span class='st'>"auto"</span>,
-  slug <span class='op'>=</span> <span class='st'>"auto"</span>,
-  date <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.Date</a></span><span class='op'>(</span><span class='op'>)</span>,
-  date_prefix <span class='op'>=</span> <span class='va'>date</span>,
-  draft <span class='op'>=</span> <span class='cn'>FALSE</span>,
-  edit <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span>
+    <pre class="usage"><span class='fu'>modify_default_highlighting</span><span class='op'>(</span>
+  name <span class='op'>=</span> <span class='st'>"highlighting"</span>,
+  numeric <span class='op'>=</span> <span class='cn'>NULL</span>,
+  strings <span class='op'>=</span> <span class='cn'>NULL</span>,
+  functions <span class='op'>=</span> <span class='cn'>NULL</span>,
+  control <span class='op'>=</span> <span class='cn'>NULL</span>,
+  constant <span class='op'>=</span> <span class='cn'>NULL</span>,
+  overwrite <span class='op'>=</span> <span class='cn'>TRUE</span>
 <span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>path</th>
-      <td><p>File path to .Rmd template for post</p></td>
+      <th>name</th>
+      <td><p>Name of the theme file (will be written as name.theme)</p></td>
     </tr>
     <tr>
-      <th>title</th>
-      <td><p>Post title. If there is a title in the template, this will override it.</p></td>
+      <th>numeric</th>
+      <td><p>Colour for numeric variables. Must be either a named colour in <code><a href='https://rdrr.io/r/grDevices/colors.html'>grDevices::colors()</a></code> or of the hex form "#RRBBGG". Default is red "#AD0000" (approx "Bright Red").</p></td>
     </tr>
     <tr>
-      <th>collection</th>
-      <td><p>Collection to create the post within (defaults to "posts")</p></td>
+      <th>strings</th>
+      <td><p>Colour for strings. Must be either a named colour in <code><a href='https://rdrr.io/r/grDevices/colors.html'>grDevices::colors()</a></code> or of the hex form "#RRBBGG". Default is green "#20794D" (approx "Eucalyptus").</p></td>
     </tr>
     <tr>
-      <th>author</th>
-      <td><p>Post author. If not provided, it will be automatically drawn from template. If not in template, it will be automatically drawn from previous post.</p></td>
+      <th>functions</th>
+      <td><p>Colour for function names. Must be either a named colour in <code><a href='https://rdrr.io/r/grDevices/colors.html'>grDevices::colors()</a></code> or of the hex form "#RRBBGG". Default is purple "#4758AB" (approx "San Marino").</p></td>
     </tr>
     <tr>
-      <th>slug</th>
-      <td><p>Post slug (directory name). Automatically computed from title if not provided.</p></td>
+      <th>control</th>
+      <td><p>Colour for control (e.g. <code>if</code>, <code>while</code>). Must be either a named colour in <code><a href='https://rdrr.io/r/grDevices/colors.html'>grDevices::colors()</a></code> or of the hex form "#RRBBGG". Default is blue "#007BA5" (approx "Deep Cerulean").</p></td>
     </tr>
     <tr>
-      <th>date</th>
-      <td><p>Post date (defaults to current date)</p></td>
+      <th>constant</th>
+      <td><p>Colour for constants (e.g. <code>TRUE</code>, <code>NULL</code>). Must be either a named colour in <code><a href='https://rdrr.io/r/grDevices/colors.html'>grDevices::colors()</a></code> or of the hex form "#RRBBGG". Default is brown "#8F5902" (approx "Chelsea Gem").</p></td>
     </tr>
     <tr>
-      <th>date_prefix</th>
-      <td><p>Date prefix for post slug (preserves chronological order for posts
-within the filesystem). Pass <code>NULL</code> for no date prefix.</p></td>
-    </tr>
-    <tr>
-      <th>draft</th>
-      <td><p>Mark the post as a <code>draft</code> (don't include it in the article listing).</p></td>
-    </tr>
-    <tr>
-      <th>edit</th>
-      <td><p>Open the post in an editor after creating it.</p></td>
+      <th>overwrite</th>
+      <td><p>logical. If <code>TRUE</code> (default), will overwrite <code>name.theme</code> if it already exists in the working directory.</p></td>
     </tr>
     </table>
 
-    <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>This function must be called from with a working directory that is within a Distill website.</p>
-<p>The output for a post must be <code><a href='https://pkgs.rstudio.com/distill/reference/distill_article.html'>distill::distill_article</a></code>. If there is no output key in the provided template, this will be added to the yaml. If there is an <code>output</code> specified in the template yaml, it must be <code><a href='https://pkgs.rstudio.com/distill/reference/distill_article.html'>distill::distill_article</a></code>, otherwise <code>create_post_from_template</code> will throw an error.</p>
-<p>Unlike <code><a href='https://pkgs.rstudio.com/distill/reference/create_post.html'>distill::create_post()</a></code>, <code>create_post_from_template</code> doesn't automatically provide a <code>description</code> key in the yaml.</p>
+    <p>This is function modifies the default syntax highlighting theme from the {distill} package by replacing the five colours used in that scheme with colours of the user's choosing. It is <em>not</em> a fully-featured function to create a theme from scratch. However, it does place a <code>.theme</code> file in your working directory which can be further modified if more customisations are desired. Note that if a hex code in the default is replaced with another hex code, that change in colour is applied. However, if a <code>null</code> in the default is replaced with a hex code, that colour does <em>not</em> show up when the theme is applied.</p>
+<p>We strongly recommend that when users choose colours for the syntax highlighting theme to be applied to their Distill website/blog, they take WCAG guidelines for web accessibility into account by ensuring that the colour contrast ratio between each of the colours used and background colour is at least 4.5:1. This can be checked with a tool such as <a href='https://webaim.org/resources/contrastchecker/'>WebAIM contrast checker</a> or in R with <code><a href='https://rdrr.io/pkg/savonliquide/man/check_contrast.html'>savonliquide::check_contrast()</a></code> or the <code>cr_get_ratio()</code> function from the <a href='https://github.com/matt-dray/coloratio'><code>coloratio</code></a> package, available on GitHub. We also recommend checking that your palette is colourblind-friendly, for example by using <code><a href='https://rdrr.io/pkg/prismatic/man/check_color_blindness.html'>prismatic::check_color_blindness()</a></code> function.</p>
+<p>There are two ways to apply a custom syntax highlighting scheme to a
+Distill site or blog:</p><ol>
+<li><p>Apply it site-wide by adding a <code>theme</code> key to the top-level of your
+<code>_site.yml</code> configuration file (assuming the theme file is in your
+root directory):<div class="yaml"></p><pre><span class='va'>output</span><span class='op'>:</span>
+  <span class='fu'>distill</span><span class='fu'>::</span><span class='va'><a href='https://pkgs.rstudio.com/distill/reference/distill_article.html'>distill_article</a></span><span class='op'>:</span>
+    <span class='va'>highlight</span><span class='op'>:</span> <span class='va'>highlighting.theme</span>
+</pre><p></div></p></li>
+</ol>
+
+<p>At least, that <em>should</em> work, but isn’t for the author at the time of
+writing. There is an open
+<a href='https://github.com/rstudio/distill/issues/370'>issue</a> about this.</p><ol>
+<li><p>Apply to an individual article by adding a <code>theme</code> key to your
+article’s YAML front-matter, using the full path (assuming that the
+<code>.theme</code> file is in the site root directory), e.g.:<div class="yaml"></p><pre>---
+title: "My Highlighting Theme"
+output:
+  distill::distill_article:
+    highlight: /Users/USER/WEBSITE/highlighting.theme
+---
+</pre><p></div></p></li>
+</ol>
+
+<p>The second option allows for you to apply your theme to individual
+articles, while using a different theme for the rest of your site. Note
+that this is only possible for stand-alone articles within a website —
+you cannot apply a theme to individual blog posts <em>only</em>.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
-<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/EllaKaye/distilltools'>distilltools</a></span><span class='op'>)</span>
-<span class='co'># .Rmd templates stored in "templates" directory</span>
-<span class='fu'>create_post_from_template</span><span class='op'>(</span><span class='fu'>here</span><span class='fu'>::</span><span class='fu'>here</span><span class='op'>(</span><span class='st'>"templates"</span>, <span class='st'>"post-template.Rmd"</span><span class='op'>)</span><span class='op'>)</span>
+<span class='fu'>modify_default_highlighting</span><span class='op'>(</span><span class='st'>"my_highlighting"</span>,
+    <span class='st'>"#B6005B"</span>, <span class='st'>"#008643"</span>, <span class='st'>"#005BB6"</span>, <span class='st'>"#5A00B5"</span>, <span class='st'>"#B65B00"</span><span class='op'>)</span>
+<span class='fu'>modify_default_highlighting</span><span class='op'>(</span><span class='st'>"base_cols"</span>,
+    <span class='st'>"red"</span>, <span class='st'>"orange"</span>, <span class='st'>"yellow"</span>, <span class='st'>"green"</span>, <span class='st'>"blue"</span><span class='op'>)</span>
 <span class='op'>}</span>
-
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
