@@ -48,7 +48,7 @@ test_that("User template can be found", {
                                      "inst",
                                      "rmarkdown",
                                      "templates",
-                                     "post_template",
+                                     "default_template",
                                      "skeleton")
 
   dir.create(default_template_path, recursive = TRUE)
@@ -58,12 +58,12 @@ test_that("User template can be found", {
   expect_equal({
     withr::local_dir(file.path(tmpdir))
     names(available_templates())
-  }, c("Default", "Post Template"))
+  }, c("Default", "Default Template"))
 
   # When a user-defined path is set with `options()`
   user_template_path <- file.path(tmpdir,
                                   "templates",
-                                  "post_template",
+                                  "user_template",
                                   "skeleton")
 
   dir.create(user_template_path, recursive = TRUE)
@@ -74,6 +74,6 @@ test_that("User template can be found", {
     withr::local_dir(file.path(tmpdir))
     withr::local_options(list(distilltools.templates.path = "templates"))
     names(available_templates())
-  }, c("Default", "Post Template"))
+  }, c("Default", "User Template"))
 
 })
