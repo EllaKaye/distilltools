@@ -2,7 +2,6 @@
 
 export(available_templates)
 export(create_post_from_template)
-export(create_post_from_template_addin)
 export(create_talk)
 export(icon_link)
 export(make_icon)
