@@ -1,8 +1,20 @@
 #' Get Named Vector of Available Post Templates
 #'
-#' Call this function to get a named vector of available templates for new
-#' posts. Post templates must follow the following path convention:
-#' `inst/rmarkdown/templates/template_name/skeleton/skeleton.Rmd`.
+#' Get a named vector of available R Markdown templates for new posts.
+#'
+#' @details
+#' By default `distilltools` looks for R Markdown post templates in
+#' `./inst/rmarkdown/templates/`. In order to be recognized, templates within
+#' this path must be structured as: `template_name/skeleton/skeleton.Rmd`.
+#'
+#' The default path can be changed with
+#' `options("distilltools.templates.path" = "custom/template/path/")`.
+#' For the change to persist between R sessions this code should be placed
+#' in a project local `.Rprofile`. Use `usethis::edit_r_profile("project")` to
+#' create or edit this file.
+#'
+#' @seealso
+#' `distilltools:create_post_from_template()`
 #'
 #' @export
 available_templates <- function() {
@@ -15,10 +27,18 @@ available_templates <- function() {
                                   "skeleton.Rmd",
                                   package = "distilltools")
 
-  # If the user has any templates locally make those available too
-  user_templates <- list.dirs("inst/rmarkdown/templates",
-                              full.names = FALSE,
-                              recursive = FALSE)
+  # If the user has any templates locally make those available too. The user
+  # can specify a custom path to their templates with
+  # `options(distilltools.templates.path = "user/defined/path")`
+  if (is.null(getOption("distilltools.templates.path"))) {
+    user_templates <- list.dirs(file.path("inst", "rmarkdown", "templates"),
+                                full.names = FALSE,
+                                recursive = FALSE)
+  } else {
+    user_templates <- list.dirs(getOption("distilltools.templates.path"),
+                                full.names = FALSE,
+                                recursive = FALSE)
+  }
   user_templates <- tools::toTitleCase(gsub("_", " ", user_templates))
   user_templates_paths <-
     list.dirs("inst/rmarkdown/templates", recursive = FALSE)

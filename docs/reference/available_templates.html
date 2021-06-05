@@ -73,9 +73,7 @@
 
 
 <meta property="og:title" content="Get Named Vector of Available Post Templates — available_templates" />
-<meta property="og:description" content="Call this function to get a named vector of available templates for new
-posts. Post templates must follow the following path convention:
-inst/rmarkdown/templates/template_name/skeleton/skeleton.Rmd." />
+<meta property="og:description" content="Get a named vector of available R Markdown templates for new posts." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -158,14 +156,25 @@ inst/rmarkdown/templates/template_name/skeleton/skeleton.Rmd." />
     </div>
 
     <div class="ref-description">
-    <p>Call this function to get a named vector of available templates for new
-posts. Post templates must follow the following path convention:
-<code>inst/rmarkdown/templates/template_name/skeleton/skeleton.Rmd</code>.</p>
+    <p>Get a named vector of available R Markdown templates for new posts.</p>
     </div>
 
     <pre class="usage"><span class='fu'>available_templates</span><span class='op'>(</span><span class='op'>)</span></pre>
 
 
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>By default <code>distilltools</code> looks for R Markdown post templates in
+<code>./inst/rmarkdown/templates/</code>. In order to be recognized, templates within
+this path must be structured as: <code>template_name/skeleton/skeleton.Rmd</code>.</p>
+<p>The default path can be changed with
+<code><a href='https://rdrr.io/r/base/options.html'>options("distilltools.templates.path" = "custom/template/path/")</a></code>.
+For the change to persist between R sessions this code should be placed
+in a project local <code>.Rprofile</code>. Use <code><a href='https://usethis.r-lib.org/reference/edit.html'>usethis::edit_r_profile("project")</a></code> to
+create or edit this file.</p>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p><code>distilltools:create_post_from_template()</code></p></div>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

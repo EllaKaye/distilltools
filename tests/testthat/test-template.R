@@ -43,19 +43,36 @@ test_that("User template can be found", {
 
   tmpdir <- withr::local_tempdir()
 
-  template_path <- file.path(tmpdir,
-                             "inst",
-                             "rmarkdown",
-                             "templates",
-                             "post_template",
-                             "skeleton")
+  # When the default path is used
+  default_template_path <- file.path(tmpdir,
+                                     "inst",
+                                     "rmarkdown",
+                                     "templates",
+                                     "post_template",
+                                     "skeleton")
 
-  dir.create(template_path, recursive = TRUE)
+  dir.create(default_template_path, recursive = TRUE)
 
-  file.copy(template, template_path)
+  file.copy(template, default_template_path)
 
   expect_equal({
     withr::local_dir(file.path(tmpdir))
+    names(available_templates())
+  }, c("Default", "Post Template"))
+
+  # When a user-defined path is set with `options()`
+  user_template_path <- file.path(tmpdir,
+                                  "templates",
+                                  "post_template",
+                                  "skeleton")
+
+  dir.create(user_template_path, recursive = TRUE)
+
+  file.copy(template, user_template_path)
+
+  expect_equal({
+    withr::local_dir(file.path(tmpdir))
+    withr::local_options(list(distilltools.templates.path = "templates"))
     names(available_templates())
   }, c("Default", "Post Template"))
 
