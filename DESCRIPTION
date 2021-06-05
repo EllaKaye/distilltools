@@ -4,7 +4,10 @@ Title: A collection of tools to assist in the creating and styling of content on
 Version: 0.0.0.9001
 Authors@R: c(
   person("Ella", "Kaye", email = "E.Kaye.1@warwick.ac.uk", role = c("aut", "cre")),
-  person("John Paul", "Helveston", role = c("aut")))
+  person("John Paul", "Helveston", role = c("aut")),
+  person("Michael", "McCarthy", role = "ctb"),
+  person()
+  )
 Author: Ella Kaye [aut, cre], John Paul Helveston [aut]
 Maintainer: Ella Kaye <E.Kaye.1@warwick.ac.uk>
 URL: https://github.com/EllaKaye/distilltools, https://ellakaye.github.io/distilltools/
@@ -26,5 +29,10 @@ Imports:
     usethis,
     xfun (>= 0.2),
     yaml
+Suggests:
+    shiny,
+    miniUI,
+    testthat (>= 3.0.0)
 Depends: 
     R (>= 2.10)
+Config/testthat/edition: 3
