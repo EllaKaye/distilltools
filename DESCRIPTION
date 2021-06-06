@@ -5,10 +5,10 @@ Version: 0.0.0.9001
 Authors@R: c(
   person("Ella", "Kaye", email = "E.Kaye.1@warwick.ac.uk", role = c("aut", "cre")),
   person("John Paul", "Helveston", role = c("aut")),
-  person("Michael", "McCarthy", role = "ctb"),
+  person("Michael", "McCarthy", role = "aut"),
   person()
   )
-Author: Ella Kaye [aut, cre], John Paul Helveston [aut]
+Author: Ella Kaye [aut, cre], John Paul Helveston [aut], Michael McCarthy [aut]
 Maintainer: Ella Kaye <E.Kaye.1@warwick.ac.uk>
 URL: https://github.com/EllaKaye/distilltools, https://ellakaye.github.io/distilltools/
 Description: A collection of tools to assist in the creating and styling of content on websites built with the distill package. 
