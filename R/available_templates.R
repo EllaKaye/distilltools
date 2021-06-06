@@ -4,8 +4,15 @@
 #'
 #' @details
 #' By default `distilltools` looks for R Markdown post templates in
-#' `./inst/rmarkdown/templates/`. In order to be recognized, templates within
-#' this path must be structured as: `template_name/skeleton/skeleton.Rmd`.
+#' `./templates`. Templates within this path should be located in their own
+#' subdirectory. The R Markdown file for a template can be located anywhere
+#' within this subdirectory and can have any name.
+#'
+#' The template subdirectory name will be used to name the template. For
+#' example, `./templates/my_template/skeleton.Rmd` will be recognized as "My
+#' Template". This name can then be used to access the path for "My Template"
+#' (see examples), and will also be displayed in the list of available
+#' templates in the "New post from template" RStudio addin.
 #'
 #' The default path can be changed with
 #' `options("distilltools.templates.path" = "custom/template/path/")`.
@@ -15,6 +22,10 @@
 #'
 #' @seealso
 #' `distilltools:create_post_from_template()`
+#'
+#' @examples
+#' # Return the path of a template using its name
+#' available_templates()[["Default"]]
 #'
 #' @export
 available_templates <- function() {
@@ -33,7 +44,7 @@ available_templates <- function() {
   # a default path for them
   if (is.null(getOption("distilltools.templates.path"))) {
     withr::local_options(list(
-      distilltools.templates.path = file.path("inst", "rmarkdown", "templates")
+      distilltools.templates.path = file.path("templates")
     ))
   }
 

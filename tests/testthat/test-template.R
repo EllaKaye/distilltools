@@ -18,8 +18,6 @@ test_that("Warn when template is missing", {
   tmpdir <- withr::local_tempdir()
 
   template_path <- file.path(tmpdir,
-                             "inst",
-                             "rmarkdown",
                              "templates",
                              "post_template")
 
@@ -28,7 +26,7 @@ test_that("Warn when template is missing", {
   expect_warning({
     withr::local_dir(file.path(tmpdir))
     available_templates()
-  }, "No `skeleton.Rmd` file exists for the following templates")
+  }, "No R Markdown file exists for the following templates")
 
 })
 
@@ -45,11 +43,8 @@ test_that("User template can be found", {
 
   # When the default path is used
   default_template_path <- file.path(tmpdir,
-                                     "inst",
-                                     "rmarkdown",
                                      "templates",
-                                     "default_template",
-                                     "skeleton")
+                                     "default_template")
 
   dir.create(default_template_path, recursive = TRUE)
 
@@ -62,8 +57,10 @@ test_that("User template can be found", {
 
   # When a user-defined path is set with `options()`
   user_template_path <- file.path(tmpdir,
+                                  "inst",
+                                  "rmarkdown",
                                   "templates",
-                                  "user_template",
+                                  "user-template",
                                   "skeleton")
 
   dir.create(user_template_path, recursive = TRUE)
@@ -72,7 +69,11 @@ test_that("User template can be found", {
 
   expect_equal({
     withr::local_dir(file.path(tmpdir))
-    withr::local_options(list(distilltools.templates.path = "templates"))
+    withr::local_options(list(
+      distilltools.templates.path = file.path("inst",
+                                              "rmarkdown",
+                                              "templates")
+      ))
     names(available_templates())
   }, c("Default", "User Template"))
 

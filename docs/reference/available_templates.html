@@ -165,8 +165,14 @@
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>By default <code>distilltools</code> looks for R Markdown post templates in
-<code>./inst/rmarkdown/templates/</code>. In order to be recognized, templates within
-this path must be structured as: <code>template_name/skeleton/skeleton.Rmd</code>.</p>
+<code>./templates</code>. Templates within this path should be located in their own
+subdirectory. The R Markdown file for a template can be located anywhere
+within this subdirectory and can have any name.</p>
+<p>The template subdirectory name will be used to name the template. For
+example, <code>./templates/my_template/skeleton.Rmd</code> will be recognized as "My
+Template". This name can then be used to access the path for "My Template"
+(see examples), and will also be displayed in the list of available
+templates in the "New post from template" RStudio addin.</p>
 <p>The default path can be changed with
 <code><a href='https://rdrr.io/r/base/options.html'>options("distilltools.templates.path" = "custom/template/path/")</a></code>.
 For the change to persist between R sessions this code should be placed
@@ -176,6 +182,11 @@ create or edit this file.</p>
 
     <div class='dont-index'><p><code>distilltools:create_post_from_template()</code></p></div>
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='co'># Return the path of a template using its name</span>
+<span class='fu'>available_templates</span><span class='op'>(</span><span class='op'>)</span><span class='op'>[[</span><span class='st'>"Default"</span><span class='op'>]</span><span class='op'>]</span>
+</div><div class='output co'>#&gt; [1] "/private/var/folders/xm/n2t41ktd6cj0l3ps1mpk9f6r0000gn/T/Rtmp5SuaRY/temp_libpath153a41d8e3338/distilltools/rmarkdown/templates/default/skeleton/skeleton.Rmd"</div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -187,7 +198,7 @@ create or edit this file.</p>
 
       <footer>
       <div class="copyright">
-  <p>Developed by Ella Kaye, John Paul Helveston.</p>
+  <p>Developed by Ella Kaye, John Paul Helveston, Michael McCarthy.</p>
 </div>
 
 <div class="pkgdown">
