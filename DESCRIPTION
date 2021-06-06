@@ -27,13 +27,13 @@ Imports:
     rprojroot,
     rstudioapi,
     usethis,
+    withr,
     xfun (>= 0.2),
     yaml
 Suggests:
     shiny,
     miniUI,
-    testthat (>= 3.0.0),
-    withr
+    testthat (>= 3.0.0)
 Depends: 
     R (>= 2.10)
 Config/testthat/edition: 3
