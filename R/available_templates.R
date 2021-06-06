@@ -73,15 +73,13 @@ available_templates <- function() {
     # it. In cases where the file does not exist the path to the folder will
     # still be returned, so it is necessary to use `!dir.exists()` in the if
     # statement.
-    if (any(file.exists(user_templates_paths) &&
-            !dir.exists(user_templates_paths) == FALSE)) {
+    if (any(file.not.dir.exists(user_templates_paths) == FALSE)) {
 
-      missing_templates <- templates[!file.exists(templates)
-                                     && dir.exists(templates)]
+      missing_templates <- templates[!file.not.dir.exists(templates)]
 
-      warning("No `skeleton.Rmd` file exists for the following templates: ",
+      warning("No R Markdown file exists for the following templates: ",
               paste(names(missing_templates), collapse = ", "), ". ",
-              "See `?available_templates` for the expected path structure."
+              "See `?available_templates` for help."
       )
     }
 
