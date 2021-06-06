@@ -18,6 +18,7 @@
 #'
 #' @export
 available_templates <- function() {
+
   # Get path to the default distilltools post template so it is accessible in
   # the addin
   default_template <- system.file("rmarkdown",
@@ -26,43 +27,65 @@ available_templates <- function() {
                                   "skeleton",
                                   "skeleton.Rmd",
                                   package = "distilltools")
+  names(default_template) <- "Default"
 
-  # If the user has any templates locally make those available too. The user
-  # can specify a custom path to their templates with
-  # `options(distilltools.templates.path = "user/defined/path")`
+  # If the user has not specified a custom path to their templates then search
+  # a default path for them
   if (is.null(getOption("distilltools.templates.path"))) {
-    user_templates <- list.dirs(file.path("inst", "rmarkdown", "templates"),
-                                full.names = FALSE,
-                                recursive = FALSE)
+    withr::local_options(list(
+      distilltools.templates.path = file.path("inst", "rmarkdown", "templates")
+    ))
+  }
+
+  # Get path and folder names of any templates the user has locally. Not all
+  # users will have templates locally. A character of length 0 is implicitly
+  # returned in this case.
+  user_templates <- lapply(list(paths = TRUE, names = FALSE), function(x) {
+    template_dirs <- list.dirs(getOption("distilltools.templates.path"),
+                             full.names = x,
+                             recursive = FALSE)
+  })
+
+  # Only return the default template if no user local templates are detected
+  if (length(user_templates$paths) == 0) {
+    default_template
   } else {
-    user_templates <- list.dirs(getOption("distilltools.templates.path"),
-                                full.names = FALSE,
-                                recursive = FALSE)
+    # Return default and user templates otherwise
+
+    # Construct paths to user template files
+    user_template_files <- list.files(user_templates$paths,
+                                      pattern = "\\.Rmd",
+                                      recursive = TRUE)
+    user_templates_paths <- paste0(user_templates$paths, "/",
+                                   user_template_files)
+
+    # Pretty up the template names
+    user_templates$names <- tools::toTitleCase(
+      gsub("_|-", " ", user_templates$names)
+      )
+    names(user_templates_paths) <- user_templates$names
+
+    # Default and user templates
+    templates <- c(default_template, user_templates_paths)
+
+    # Warn if user template files do not exist locally. This might happen if
+    # the folder structure exists but there is no `.Rmd` file present inside
+    # it. In cases where the file does not exist the path to the folder will
+    # still be returned, so it is necessary to use `!dir.exists()` in the if
+    # statement.
+    if (any(file.exists(user_templates_paths) &&
+            !dir.exists(user_templates_paths) == FALSE)) {
+
+      missing_templates <- templates[!file.exists(templates)
+                                     && dir.exists(templates)]
+
+      warning("No `skeleton.Rmd` file exists for the following templates: ",
+              paste(names(missing_templates), collapse = ", "), ". ",
+              "See `?available_templates` for the expected path structure."
+      )
+    }
+
+    templates
   }
-  user_templates <- tools::toTitleCase(gsub("_", " ", user_templates))
-  user_templates_paths <-
-    list.dirs("inst/rmarkdown/templates", recursive = FALSE)
-  user_templates_paths <-
-    paste0(user_templates_paths, "/skeleton/skeleton.Rmd")
 
-  # Create vector to store templates in for use in Shiny UI
-  templates_names <- c("Default", user_templates)
-  templates <- c(default_template, user_templates_paths)
-  names(templates) <- templates_names
-
-  # Warn if user template files do not exist locally. This might happen if the
-  # folder structure exists but there is no `skeleton.Rmd` file, if there is
-  # a typo that violates the expected path, or if the expected path structure
-  # is violated.
-  if (any(file.exists(user_templates_paths) == FALSE)) {
-
-    missing_templates <- templates[!file.exists(templates)]
-
-    warning("No `skeleton.Rmd` file exists for the following templates: ",
-            paste(names(missing_templates), collapse = ", "), ". ",
-            "See `?available_templates` for the expected path structure."
-            )
-  }
-
-  templates
 }
