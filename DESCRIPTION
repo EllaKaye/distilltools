@@ -1,7 +1,7 @@
 Package: distilltools
 Type: Package
 Title: A collection of tools to assist in the creating and styling of content on {distill} websites
-Version: 0.0.0.9001
+Version: 0.0.0.9002
 Authors@R: c(
   person("Ella", "Kaye", email = "E.Kaye.1@warwick.ac.uk", role = c("aut", "cre")),
   person("John Paul", "Helveston", role = c("aut")),
