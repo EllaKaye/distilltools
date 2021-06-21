@@ -10,19 +10,16 @@ available_templates()
 Get a named vector of available R Markdown templates for new posts.
 }
 \details{
-By default \code{distilltools} looks for R Markdown post templates in
-\code{./templates}. Templates within this path should be located in their own
-subdirectory. The R Markdown file for a template can be located anywhere
-within this subdirectory and can have any name.
+By default \code{available_templates()} looks for R Markdown post templates in
+\code{./templates}. The template file name will be used to name the template. For
+example, \code{./templates/my_template.Rmd} will be named "my_template". This
+name can be used to access the path for "my_template" (see examples), and
+will also be displayed in the list of available templates in the "New post
+from template" RStudio addin.
 
-The template subdirectory name will be used to name the template. For
-example, \code{./templates/my_template/skeleton.Rmd} will be recognized as "My
-Template". This name can then be used to access the path for "My Template"
-(see examples), and will also be displayed in the list of available
-templates in the "New post from template" RStudio addin.
-
-The default path can be changed with
-\code{options("distilltools.templates.path" = "custom/template/path/")}.
+The default directory \code{available_templates()} looks for R Markdown post
+templates in can be changed with
+\code{options("distilltools.templates.path" = "custom/templates/path/")}.
 For the change to persist between R sessions this code should be placed
 in a project local \code{.Rprofile}. Use \code{usethis::edit_r_profile("project")} to
 create or edit this file.

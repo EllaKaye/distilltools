@@ -13,23 +13,6 @@ test_that("Default template can be found", {
 
 })
 
-test_that("Warn when template is missing", {
-
-  tmpdir <- withr::local_tempdir()
-
-  template_path <- file.path(tmpdir,
-                             "templates",
-                             "post_template")
-
-  dir.create(template_path, recursive = TRUE)
-
-  expect_warning({
-    withr::local_dir(file.path(tmpdir))
-    available_templates()
-  }, "No R Markdown file exists for the following templates")
-
-})
-
 test_that("User template can be found", {
 
   template <- system.file("rmarkdown",
@@ -43,29 +26,36 @@ test_that("User template can be found", {
 
   # When the default path is used
   default_template_path <- file.path(tmpdir,
-                                     "templates",
-                                     "default_template")
+                                     "templates")
 
   dir.create(default_template_path, recursive = TRUE)
 
   file.copy(template, default_template_path)
 
+  file.rename(
+    file.path(default_template_path, "skeleton.Rmd"),
+    file.path(default_template_path, "default_path.Rmd")
+  )
+
   expect_equal({
     withr::local_dir(file.path(tmpdir))
     names(available_templates())
-  }, c("Default", "Default Template"))
+  }, c("Default", "default_path"))
 
   # When a user-defined path is set with `options()`
   user_template_path <- file.path(tmpdir,
                                   "inst",
                                   "rmarkdown",
-                                  "templates",
-                                  "user-template",
-                                  "skeleton")
+                                  "templates")
 
   dir.create(user_template_path, recursive = TRUE)
 
   file.copy(template, user_template_path)
+
+  file.rename(
+    file.path(user_template_path, "skeleton.Rmd"),
+    file.path(user_template_path, "user_path.Rmd")
+  )
 
   expect_equal({
     withr::local_dir(file.path(tmpdir))
@@ -75,6 +65,6 @@ test_that("User template can be found", {
                                               "templates")
       ))
     names(available_templates())
-  }, c("Default", "User Template"))
+  }, c("Default", "user_path"))
 
 })
