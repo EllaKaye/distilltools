@@ -1,12 +1,3 @@
-# file.exists() returns TRUE when the path points to a directory. This function
-# returns FALSE if the file that exists is a directory or if nothing exists in
-# the path. But it still returns TRUE when a file exists.
-file.not.dir.exists <- function(path) {
-  sapply(path, function(x) {
-    file.exists(x) && !dir.exists(x)
-  })
-}
-
 # Utilities for running RStudio addin scripts located in `inst/scripts` -------
 # Keeping addins that are just wrappers for {distilltools} functions to a
 # separate script keeps this package more lightweight since users do not have
