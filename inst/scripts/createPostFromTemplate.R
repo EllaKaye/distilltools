@@ -59,7 +59,7 @@ createPostFromTemplateAddin <- function() {
   }
 
   # Use a modal dialog as a viewer.
-  viewer <- shiny::dialogViewer("New Post", height = 500)
+  viewer <- shiny::dialogViewer("Create Post", height = 500)
   shiny::runGadget(ui, server, viewer = viewer)
 
 }
