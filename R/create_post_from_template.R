@@ -14,7 +14,7 @@
 #' @param draft Mark the post as a `draft` (don't include it in the article listing).
 #' @param edit Open the post in an editor after creating it.
 #'
-#' @note This function must be called from with a working directory that is within a Distill website.
+#' @note This function must be called from a working directory that is within a Distill website.
 #' @note The output for a post must be `distill::distill_article`. If there is no output key in the provided template, this will be added to the yaml. If there is an `output` specified in the template yaml, it must be `distill::distill_article`, otherwise `create_post_from_template` will throw an error.
 #' @note Unlike [distill::create_post()], `create_post_from_template` doesn't automatically provide a `description` key in the yaml.
 #'
