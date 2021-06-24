@@ -1,4 +1,4 @@
-#' Get Named Vector of Available Post Templates
+#' Get named vector of available post templates
 #'
 #' Get a named vector of available R Markdown templates for new posts.
 #'
