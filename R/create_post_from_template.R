@@ -18,6 +18,8 @@
 #' @note The output for a post must be `distill::distill_article`. If there is no output key in the provided template, this will be added to the yaml. If there is an `output` specified in the template yaml, it must be `distill::distill_article`, otherwise `create_post_from_template` will throw an error.
 #' @note Unlike [distill::create_post()], `create_post_from_template` doesn't automatically provide a `description` key in the yaml.
 #'
+#' @seealso [distilltools::available_templates()]
+#'
 #' @examples
 #' \dontrun{
 #' library(distilltools)
