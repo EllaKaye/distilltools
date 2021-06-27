@@ -26,8 +26,10 @@
 #' [create_post_from_template()], [distill::create_post()]
 #'
 #' @examples
+#' \dontrun{
 #' # Return the path of a template using its name
 #' available_templates()[["Default"]]
+#' }
 #'
 #' @export
 available_templates <- function() {
