@@ -22,7 +22,7 @@
   }
 </script>
 
-<title>Get Named Vector of Available Post Templates — available_templates • distilltools</title>
+<title>Get named vector of available post templates — available_templates • distilltools</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -72,7 +72,7 @@
 
 
 
-<meta property="og:title" content="Get Named Vector of Available Post Templates — available_templates" />
+<meta property="og:title" content="Get named vector of available post templates — available_templates" />
 <meta property="og:description" content="Get a named vector of available R Markdown templates for new posts." />
 <meta property="og:image" content="/logo.png" />
 
@@ -150,7 +150,7 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Get Named Vector of Available Post Templates</h1>
+    <h1>Get named vector of available post templates</h1>
     <small class="dont-index">Source: <a href='https://github.com/EllaKaye/distilltools/blob/master/R/available_templates.R'><code>R/available_templates.R</code></a></small>
     <div class="hidden name"><code>available_templates.Rd</code></div>
     </div>
@@ -182,12 +182,14 @@ available a default template named "Default" that matches the one from
 post from template" RStudio addin as well.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code>[distill::create_post()]</code>, <code>[distilltools::create_post_from_template()]</code></p></div>
+    <div class='dont-index'><p><code><a href='create_post_from_template.html'>create_post_from_template()</a></code>, <code><a href='https://pkgs.rstudio.com/distill/reference/create_post.html'>distill::create_post()</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># Return the path of a template using its name</span>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='co'># Return the path of a template using its name</span>
 <span class='fu'>available_templates</span><span class='op'>(</span><span class='op'>)</span><span class='op'>[[</span><span class='st'>"Default"</span><span class='op'>]</span><span class='op'>]</span>
-</div><div class='output co'>#&gt; [1] "/private/var/folders/xm/n2t41ktd6cj0l3ps1mpk9f6r0000gn/T/RtmpltLNrd/temp_libpath16d94e6adbd/distilltools/rmarkdown/templates/default/skeleton/skeleton.Rmd"</div><div class='input'>
+<span class='op'>}</span>
+
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

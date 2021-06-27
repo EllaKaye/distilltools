@@ -2,7 +2,7 @@
 % Please edit documentation in R/available_templates.R
 \name{available_templates}
 \alias{available_templates}
-\title{Get Named Vector of Available Post Templates}
+\title{Get named vector of available post templates}
 \usage{
 available_templates()
 }
@@ -30,10 +30,12 @@ available a default template named "Default" that matches the one from
 post from template" RStudio addin as well.
 }
 \examples{
+\dontrun{
 # Return the path of a template using its name
 available_templates()[["Default"]]
+}
 
 }
 \seealso{
-\verb{[distill::create_post()]}, \verb{[distilltools::create_post_from_template()]}
+\code{\link[=create_post_from_template]{create_post_from_template()}}, \code{\link[distill:create_post]{distill::create_post()}}
 }

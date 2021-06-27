@@ -17,7 +17,7 @@ create_post_from_template(
 )
 }
 \arguments{
-\item{path}{File path to .Rmd template for post}
+\item{path}{File path to \code{.Rmd} post template}
 
 \item{title}{Post title. If there is a title in the template, this will override it.}
 
@@ -37,20 +37,50 @@ within the filesystem). Pass \code{NULL} for no date prefix.}
 \item{edit}{Open the post in an editor after creating it.}
 }
 \description{
-This function is designed to work as close as possible to \code{\link[distill:create_post]{distill::create_post()}} (and draws on a lot of code from that function). The main difference is the compolusary argument \code{path} which gives the path of the template to create the post from. All other arguments work the same as \code{\link[distill:create_post]{distill::create_post()}} (unless specified in Arguments).
+Create a new blog post from a template. This function can also be run
+interactively using the \verb{Create post from template} RStudio addin.
+}
+\details{
+The \code{create_post_from_template} function is designed to work as closely as
+possible to \code{\link[distill:create_post]{distill::create_post()}}. The main difference is the compulsory
+\code{path} argument, which gives the path of the R Markdown template to create
+the post from.
+
+When running \code{create_post_from_template} interactively using the
+\verb{Create post from template} RStudio addin, a list of available templates is
+provided to choose from through a dropdown menu. The contents of this list
+are retrieved using the \code{available_templates()} function, which looks for R
+Markdown post templates in \code{./templates} by default. The global option
+\code{distilltools.templates.path} can be used to change the directory
+\code{available_templates()} looks in (See \code{?available_templates} for details).
+In addition to local templates, the \verb{Create post from template} RStudio
+addin will always make available a default template named "Default" that
+matches the one from \code{distill::create_post()}.
 }
 \note{
-This function must be called from with a working directory that is within a Distill website.
+This function must be called from a working directory that is within a
+Distill website.
 
-The output for a post must be \code{distill::distill_article}. If there is no output key in the provided template, this will be added to the yaml. If there is an \code{output} specified in the template yaml, it must be \code{distill::distill_article}, otherwise \code{create_post_from_template} will throw an error.
+The output for a post must be \code{distill::distill_article}. If there is no
+output key in the provided template, this will be added to the yaml. If
+there is an \code{output} specified in the template yaml, it must be
+\code{distill::distill_article}, otherwise \code{create_post_from_template} will
+throw an error.
 
-Unlike \code{\link[distill:create_post]{distill::create_post()}}, \code{create_post_from_template} doesn't automatically provide a \code{description} key in the yaml.
+Unlike \code{\link[distill:create_post]{distill::create_post()}}, \code{create_post_from_template} doesn't
+automatically provide a \code{description} key in the yaml.
 }
 \examples{
 \dontrun{
 library(distilltools)
 # .Rmd templates stored in "templates" directory
-create_post_from_template(here::here("templates", "post-template.Rmd"))
+create_post_from_template(
+  path = "templates/post-template.Rmd",
+  title = "My post from template"
+)
 }
 
+}
+\seealso{
+\code{\link[=available_templates]{available_templates()}}, \code{\link[distill:create_post]{distill::create_post()}}
 }
