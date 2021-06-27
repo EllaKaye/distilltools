@@ -23,7 +23,7 @@
 #' post from template" RStudio addin as well.
 #'
 #' @seealso
-#' [distill::create_post()], [distilltools::create_post_from_template()]
+#' [create_post_from_template()], [distill::create_post()]
 #'
 #' @examples
 #' # Return the path of a template using its name
