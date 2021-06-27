@@ -1,10 +1,10 @@
 #' Create a new blog post from a template
 #'
-#' This function is designed to work as close as possible to [distill::create_post()] (and draws on a lot of code from that function). The main difference is the compolusary argument `path` which gives the path of the template to create the post from. All other arguments work the same as [distill::create_post()] (unless specified in Arguments).
+#' Create a new blog post from a template. This function can also be run
+#' interactively using the `Create post from template` RStudio addin.
 #'
-#' @param path File path to .Rmd template for post
+#' @param path File path to `.Rmd` post template
 #' @param title Post title. If there is a title in the template, this will override it.
-#'
 #' @param author Post author. If not provided, it will be automatically drawn from template. If not in template, it will be automatically drawn from previous post.
 #' @param collection Collection to create the post within (defaults to "posts")
 #' @param slug Post slug (directory name). Automatically computed from title if not provided.
@@ -14,17 +14,46 @@
 #' @param draft Mark the post as a `draft` (don't include it in the article listing).
 #' @param edit Open the post in an editor after creating it.
 #'
-#' @note This function must be called from a working directory that is within a Distill website.
-#' @note The output for a post must be `distill::distill_article`. If there is no output key in the provided template, this will be added to the yaml. If there is an `output` specified in the template yaml, it must be `distill::distill_article`, otherwise `create_post_from_template` will throw an error.
-#' @note Unlike [distill::create_post()], `create_post_from_template` doesn't automatically provide a `description` key in the yaml.
+#' @details
+#' The `create_post_from_template` function is designed to work as closely as
+#' possible to [distill::create_post()]. The main difference is the compulsory
+#' `path` argument, which gives the path of the R Markdown template to create
+#' the post from.
 #'
-#' @seealso [distilltools::available_templates()]
+#' When running `create_post_from_template` interactively using the
+#' `Create post from template` RStudio addin, a list of available templates is
+#' provided to choose from through a dropdown menu. The contents of this list
+#' are retrieved using the `available_templates()` function, which looks for R
+#' Markdown post templates in `./templates` by default. The global option
+#' `distilltools.templates.path` can be used to change the directory
+#' `available_templates()` looks in (See `?available_templates` for details).
+#' In addition to local templates, the `Create post from template` RStudio
+#' addin will always make available a default template named "Default" that
+#' matches the one from `distill::create_post()`.
+#'
+#' @note
+#' This function must be called from a working directory that is within a
+#' Distill website.
+#'
+#' The output for a post must be `distill::distill_article`. If there is no
+#' output key in the provided template, this will be added to the yaml. If
+#' there is an `output` specified in the template yaml, it must be
+#' `distill::distill_article`, otherwise `create_post_from_template` will
+#' throw an error.
+#'
+#' Unlike [distill::create_post()], `create_post_from_template` doesn't
+#' automatically provide a `description` key in the yaml.
+#'
+#' @seealso [available_templates()], [distill::create_post()]
 #'
 #' @examples
 #' \dontrun{
 #' library(distilltools)
 #' # .Rmd templates stored in "templates" directory
-#' create_post_from_template(here::here("templates", "post-template.Rmd"))
+#' create_post_from_template(
+#'   path = "templates/post-template.Rmd",
+#'   title = "My post from template"
+#' )
 #' }
 #'
 #' @export
