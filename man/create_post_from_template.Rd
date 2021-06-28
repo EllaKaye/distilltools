@@ -38,7 +38,7 @@ within the filesystem). Pass \code{NULL} for no date prefix.}
 }
 \description{
 Create a new blog post from a template. This function can also be run
-interactively using the \verb{Create post from template} RStudio addin.
+interactively using the \verb{Create post (from template)} RStudio addin.
 }
 \details{
 The \code{create_post_from_template} function is designed to work as closely as
@@ -47,13 +47,13 @@ possible to \code{\link[distill:create_post]{distill::create_post()}}. The main 
 the post from.
 
 When running \code{create_post_from_template} interactively using the
-\verb{Create post from template} RStudio addin, a list of available templates is
+\verb{Create post (from template)} RStudio addin, a list of available templates is
 provided to choose from through a dropdown menu. The contents of this list
-are retrieved using the \code{available_templates()} function, which looks for R
-Markdown post templates in \code{./templates} by default. The global option
+are retrieved using the \code{\link[=available_templates]{available_templates()}} function, which looks for
+R Markdown post templates in \code{./templates} by default. The global option
 \code{distilltools.templates.path} can be used to change the directory
 \code{available_templates()} looks in (See \code{?available_templates} for details).
-In addition to local templates, the \verb{Create post from template} RStudio
+In addition to local templates, the \verb{Create post (from template)} RStudio
 addin will always make available a default template named "Default" that
 matches the one from \code{distill::create_post()}.
 }

@@ -14,8 +14,8 @@ By default \code{available_templates()} looks for R Markdown post templates in
 \code{./templates}. The template file name will be used to name the template. For
 example, \code{./templates/my_template.Rmd} will be named "my_template". This
 name can be used to access the path for "my_template" (see examples), and
-will also be displayed in the list of available templates in the "Create
-post from template" RStudio addin.
+will also be displayed in the list of available templates in the
+\verb{Create post (from template)} RStudio addin.
 
 The default directory \code{available_templates()} looks for R Markdown post
 templates in can be changed with
@@ -26,8 +26,8 @@ create or edit this file.
 
 In addition to local templates, \code{available_templates()} will always make
 available a default template named "Default" that matches the one from
-\code{distill::create_post()}. This template can be selected in the "Create
-post from template" RStudio addin as well.
+\code{distill::create_post()}. This template can be selected in the
+\verb{Create post (from template)} RStudio addin as well.
 }
 \examples{
 \dontrun{

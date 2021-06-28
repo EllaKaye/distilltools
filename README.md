@@ -38,10 +38,10 @@ There are currently five exported functions in `distilltools`.
 ### Blogging functions
 
 -   `create_post_from_template()`: this function works almost
-    identically to \[distill::create\_post()\], but extends it with an
+    identically to `distill::create_post()`, but extends it with an
     added `path` argument that specifies an `.Rmd` file to use as a
     template for the post. This function can also be run interactively
-    using the `Create post from template` RStudio addin. See
+    using the `Create post (from template)` RStudio addin. See
     `?create_post_from_template` and `?available_templates` for details
     on using your R Markdown templates with the addin.
 -   `available_templates()`: lists a named vector of available R
