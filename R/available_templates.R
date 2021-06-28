@@ -7,8 +7,8 @@
 #' `./templates`. The template file name will be used to name the template. For
 #' example, `./templates/my_template.Rmd` will be named "my_template". This
 #' name can be used to access the path for "my_template" (see examples), and
-#' will also be displayed in the list of available templates in the "Create
-#' post from template" RStudio addin.
+#' will also be displayed in the list of available templates in the
+#' `Create post (from template)` RStudio addin.
 #'
 #' The default directory `available_templates()` looks for R Markdown post
 #' templates in can be changed with
@@ -19,8 +19,8 @@
 #'
 #' In addition to local templates, `available_templates()` will always make
 #' available a default template named "Default" that matches the one from
-#' `distill::create_post()`. This template can be selected in the "Create
-#' post from template" RStudio addin as well.
+#' `distill::create_post()`. This template can be selected in the
+#' `Create post (from template)` RStudio addin as well.
 #'
 #' @seealso
 #' [create_post_from_template()], [distill::create_post()]

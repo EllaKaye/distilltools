@@ -1,7 +1,7 @@
 #' Create a new blog post from a template
 #'
 #' Create a new blog post from a template. This function can also be run
-#' interactively using the `Create post from template` RStudio addin.
+#' interactively using the `Create post (from template)` RStudio addin.
 #'
 #' @param path File path to `.Rmd` post template
 #' @param title Post title. If there is a title in the template, this will override it.
@@ -21,13 +21,13 @@
 #' the post from.
 #'
 #' When running `create_post_from_template` interactively using the
-#' `Create post from template` RStudio addin, a list of available templates is
+#' `Create post (from template)` RStudio addin, a list of available templates is
 #' provided to choose from through a dropdown menu. The contents of this list
 #' are retrieved using the [available_templates()] function, which looks for
 #' R Markdown post templates in `./templates` by default. The global option
 #' `distilltools.templates.path` can be used to change the directory
 #' `available_templates()` looks in (See `?available_templates` for details).
-#' In addition to local templates, the `Create post from template` RStudio
+#' In addition to local templates, the `Create post (from template)` RStudio
 #' addin will always make available a default template named "Default" that
 #' matches the one from `distill::create_post()`.
 #'

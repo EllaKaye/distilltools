@@ -1,4 +1,4 @@
-Name: Create post from template
+Name: Create post (from template)
 Description: Create a new post with distilltools::create_post_from_template().
 Binding: create_post_from_template_addin
 Interactive: true
