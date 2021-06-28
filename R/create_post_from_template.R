@@ -23,8 +23,8 @@
 #' When running `create_post_from_template` interactively using the
 #' `Create post from template` RStudio addin, a list of available templates is
 #' provided to choose from through a dropdown menu. The contents of this list
-#' are retrieved using the `available_templates()` function, which looks for R
-#' Markdown post templates in `./templates` by default. The global option
+#' are retrieved using the [available_templates()] function, which looks for
+#' R Markdown post templates in `./templates` by default. The global option
 #' `distilltools.templates.path` can be used to change the directory
 #' `available_templates()` looks in (See `?available_templates` for details).
 #' In addition to local templates, the `Create post from template` RStudio
