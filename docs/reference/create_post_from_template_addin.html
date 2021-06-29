@@ -22,7 +22,7 @@
   }
 </script>
 
-<title>Create a talk page with icon links — create_talk • distilltools</title>
+<title>Create Post from Template — create_post_from_template_addin • distilltools</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -72,8 +72,9 @@
 
 
 
-<meta property="og:title" content="Create a talk page with icon links — create_talk" />
-<meta property="og:description" content="This function wraps distill::create_post(), but defaults to the _talk collection and pre-populates the post with icon_link() functions to provide buttons for slides, materials and project. These appear in a code chunk and can be edited. The edit option in the call to distill::create_post() must be set to FALSE, so an open argument is provided instead that serves the same purpose." />
+<meta property="og:title" content="Create Post from Template — create_post_from_template_addin" />
+<meta property="og:description" content="Call this function as an addin to interactively create a new post from an
+R Markdown template." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -109,7 +110,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">distilltools</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9002</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9001</span>
       </span>
     </div>
 
@@ -150,77 +151,20 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Create a talk page with icon links</h1>
-    <small class="dont-index">Source: <a href='https://github.com/EllaKaye/distilltools/blob/master/R/create_talk.R'><code>R/create_talk.R</code></a></small>
-    <div class="hidden name"><code>create_talk.Rd</code></div>
+    <h1>Create Post from Template</h1>
+    <small class="dont-index">Source: <a href='https://github.com/EllaKaye/distilltools/blob/master/R/addin.R'><code>R/addin.R</code></a></small>
+    <div class="hidden name"><code>create_post_from_template_addin.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>This function wraps <code><a href='https://pkgs.rstudio.com/distill/reference/create_post.html'>distill::create_post()</a></code>, but defaults to the <code>_talk</code> collection and pre-populates the post with <code><a href='make_icon.html'>icon_link()</a></code> functions to provide buttons for slides, materials and project. These appear in a code chunk and can be edited. The <code>edit</code> option in the call to <code><a href='https://pkgs.rstudio.com/distill/reference/create_post.html'>distill::create_post()</a></code> must be set to <code>FALSE</code>, so an <code>open</code> argument is provided instead that serves the same purpose.</p>
+    <p>Call this function as an addin to interactively create a new post from an
+R Markdown template.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>create_talk</span><span class='op'>(</span>
-  <span class='va'>title</span>,
-  collection <span class='op'>=</span> <span class='st'>"talks"</span>,
-  author <span class='op'>=</span> <span class='st'>"auto"</span>,
-  slug <span class='op'>=</span> <span class='st'>"auto"</span>,
-  date <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.Date</a></span><span class='op'>(</span><span class='op'>)</span>,
-  date_prefix <span class='op'>=</span> <span class='va'>date</span>,
-  draft <span class='op'>=</span> <span class='cn'>FALSE</span>,
-  open <span class='op'>=</span> <span class='cn'>TRUE</span>
-<span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>create_post_from_template_addin</span><span class='op'>(</span><span class='op'>)</span></pre>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>title</th>
-      <td><p>Post title</p></td>
-    </tr>
-    <tr>
-      <th>collection</th>
-      <td><p>collection to create the post within (defaults to "talks")</p></td>
-    </tr>
-    <tr>
-      <th>author</th>
-      <td><p>Post author. Automatically drawn from previous post if not provided.</p></td>
-    </tr>
-    <tr>
-      <th>slug</th>
-      <td><p>Post slug (directory name). Automatically computed from title if not provided</p></td>
-    </tr>
-    <tr>
-      <th>date</th>
-      <td><p>Post date (defaults to current date)</p></td>
-    </tr>
-    <tr>
-      <th>date_prefix</th>
-      <td><p>Date prefix for post slug (preserves chronological order for talks within the filesystem). Pass <code>NULL</code> for no date prefix</p></td>
-    </tr>
-    <tr>
-      <th>draft</th>
-      <td><p>Mark the post as a <code>draft</code> (don't include in the article listing)</p></td>
-    </tr>
-    <tr>
-      <th>open</th>
-      <td><p>logical. Open the created file?</p></td>
-    </tr>
-    </table>
 
-    <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
-    <p>This function must be called from with a working directory that is within
-a Distill website.</p>
-    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
-
-    <p>Eric Ekholm and Ella Kaye</p>
-
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
-<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/EllaKaye/distilltools'>distilltools</a></span><span class='op'>)</span>
-<span class='fu'>create_talk</span><span class='op'>(</span><span class='st'>"My Talk"</span><span class='op'>)</span>
-<span class='op'>}</span>
-</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -232,7 +176,7 @@ a Distill website.</p>
 
       <footer>
       <div class="copyright">
-  <p>Developed by Ella Kaye, John Paul Helveston, Michael McCarthy.</p>
+  <p>Developed by Ella Kaye, John Paul Helveston.</p>
 </div>
 
 <div class="pkgdown">
