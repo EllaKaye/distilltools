@@ -4,12 +4,11 @@ First of all, thanks for considering contributing to `distilltools`! 👍 It's p
 
 `distilltools` is an open source project, maintained by people who care. We are not directly funded to do so.
 
-[repo]: https://github.com/EllaKaye/`distilltools`
-[issues]: https://github.com/EllaKaye/`distilltools`/issues
-[new_issue]: https://github.com/EllaKaye/`distilltools`/issues/new
-[website]: 
-[citation]: 
-[email]: mailto:ella.kaye@gmail.coms
+[repo]: https://github.com/EllaKaye/distilltools
+[issues]: https://github.com/EllaKaye/distilltools/issues
+[new_issue]: https://github.com/EllaKaye/distilltools/issues/new
+[website]: https://ellakaye.github.io/distilltools/
+[email]: mailto:ella.kaye@gmail.com
 
 ## Code of conduct
 
@@ -25,7 +24,7 @@ Think `distilltools` is useful? Let others discover it, by telling them in perso
 
 ### Ask a question ⁉️
 
-Using `distilltools` and got stuck? Browse the [documentation][website] to see if you can find a solution. Still stuck? Post your question as an [issue on GitHub][new_issue]. While we cannot offer user support, we'll try to do our best to address it, as questions often lead to better documentation or the discovery of bugs.
+Using `distilltools` and got stuck? Browse the [documentation][website] to see if you can find a solution. Still stuck? Post your question as an [issue on GitHub][new_issue]. We'll try to do our best to answer it. Questions often lead to better documentation or the discovery of bugs or are the impetus for new features, so not only will you be helping yourself, but others too.
 
 Want to ask a question in private? Contact the package maintainer by [email][email].
 
