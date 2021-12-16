@@ -78,19 +78,31 @@ make_icon_text <- function(icon, text, style = "default") {
 #' There are three short icon names that appear in both font awesome and academicons. They are "mendeley", "orcid" and "researchgate". These functions default to the font awesome versions (since font awesome should work out-the-box with `distill` whereas academicons needs the stylesheet adding - see above), but the academicon versions can be accessed by using their full name, e.g. `"ai ai-orcid"`. Note that in early testing the font awesome icons for "orcid" and "mendeley" were troublesome for one of the authors, but the academicon versions worked fine.
 #'
 #' @param icon The name of the icon. For Font Awesome icons, the name should correspond to the current Version 5 name and can either be the the short name (e.g. `"github"`) or the full name (e.g. `"fab fa-github"`). [Academicons](https://jpswalsh.github.io/academicons/) can also be used and styled the same way (e.g. `"google-scholar"` or `"ai ai-google-scholar"`) but require a site header. See [here](https://www.jhelvy.com/posts/2021-03-25-customizing-distill-with-htmltools-and-css/#side-note-on-academic-icons) for details.
-#' @param text A string of the text to appear on the button
-#' @param url A url for where the button should link to
+#' @param text A string of the text to appear on the button.
+#' @param url A url for where the button should link to.
 #' @param style The style of the font awesome icon, which can be "default", "solid" or "regular". This parameter is only used when the short name of the icon is used in the `icon` argument and there is more than one style available for that icon. In that case, the default becomes "solid".
+#' @param class A string to define a class, defaults to "icon-link".
+#' @param target A string to define a target, typically `"_blank"`, `"_self"`,
+#' `"_parent"`, or `"_top"`. Defaults to "_blank".
 #' @return For `make_icon`, a `shiny.tag` with the HTML `<i class = "icon"></i>`. For `icon_link`, a `shiny.tag` with the HTML `<a href=url class="icon-link" target = "_blank" rel = "noopener"><i class=icon></i> text</a>`
 #' @author John Paul Helveston and Ella Kaye
 #' @examples icon_link("github", "materials", "https://github.com/USER/REPO")
 #' @examples icon_link("images", "slides", "https://USER.github.io/slides", style = "regular")
 #' @export
-icon_link <- function(icon = NULL, text = NULL, url = NULL, style = "default") {
+icon_link <- function(
+  icon = NULL,
+  text = NULL,
+  url = NULL,
+  style = "default",
+  class = "icon-link",
+  target = "_blank"
+) {
   if (!is.null(icon)) {
     text <- make_icon_text(icon, text, style = style)
   }
-  return(htmltools::a(href = url, text, class = "icon-link", target = "_blank", rel = "noopener"))
+  return(htmltools::a(
+    href = url, text, class = class, target = target, rel = "noopener"
+  ))
 }
 
 # icons that appear in fontawesome academicons

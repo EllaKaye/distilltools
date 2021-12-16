@@ -7,16 +7,28 @@
 \usage{
 make_icon(icon, style = "default")
 
-icon_link(icon = NULL, text = NULL, url = NULL, style = "default")
+icon_link(
+  icon = NULL,
+  text = NULL,
+  url = NULL,
+  style = "default",
+  class = "icon-link",
+  target = "_blank"
+)
 }
 \arguments{
 \item{icon}{The name of the icon. For Font Awesome icons, the name should correspond to the current Version 5 name and can either be the the short name (e.g. \code{"github"}) or the full name (e.g. \code{"fab fa-github"}). \href{https://jpswalsh.github.io/academicons/}{Academicons} can also be used and styled the same way (e.g. \code{"google-scholar"} or \code{"ai ai-google-scholar"}) but require a site header. See \href{https://www.jhelvy.com/posts/2021-03-25-customizing-distill-with-htmltools-and-css/#side-note-on-academic-icons}{here} for details.}
 
 \item{style}{The style of the font awesome icon, which can be "default", "solid" or "regular". This parameter is only used when the short name of the icon is used in the \code{icon} argument and there is more than one style available for that icon. In that case, the default becomes "solid".}
 
-\item{text}{A string of the text to appear on the button}
+\item{text}{A string of the text to appear on the button.}
 
-\item{url}{A url for where the button should link to}
+\item{url}{A url for where the button should link to.}
+
+\item{class}{A string to define a class, defaults to "icon-link".}
+
+\item{target}{A string to define a target, typically \code{"_blank"}, \code{"_self"},
+\code{"_parent"}, or \code{"_top"}. Defaults to "_blank".}
 }
 \value{
 For \code{make_icon}, a \code{shiny.tag} with the HTML \verb{<i class = "icon"></i>}. For \code{icon_link}, a \code{shiny.tag} with the HTML \verb{<a href=url class="icon-link" target = "_blank" rel = "noopener"><i class=icon></i> text</a>}
