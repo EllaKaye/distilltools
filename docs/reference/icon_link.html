@@ -109,7 +109,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">distilltools</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9002</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9003</span>
       </span>
     </div>
 
@@ -161,7 +161,14 @@
 
     <pre class="usage"><span class='fu'>make_icon</span><span class='op'>(</span><span class='va'>icon</span>, style <span class='op'>=</span> <span class='st'>"default"</span><span class='op'>)</span>
 
-<span class='fu'>icon_link</span><span class='op'>(</span>icon <span class='op'>=</span> <span class='cn'>NULL</span>, text <span class='op'>=</span> <span class='cn'>NULL</span>, url <span class='op'>=</span> <span class='cn'>NULL</span>, style <span class='op'>=</span> <span class='st'>"default"</span><span class='op'>)</span></pre>
+<span class='fu'>icon_link</span><span class='op'>(</span>
+  icon <span class='op'>=</span> <span class='cn'>NULL</span>,
+  text <span class='op'>=</span> <span class='cn'>NULL</span>,
+  url <span class='op'>=</span> <span class='cn'>NULL</span>,
+  style <span class='op'>=</span> <span class='st'>"default"</span>,
+  class <span class='op'>=</span> <span class='st'>"icon-link"</span>,
+  target <span class='op'>=</span> <span class='st'>"_blank"</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -176,11 +183,20 @@
     </tr>
     <tr>
       <th>text</th>
-      <td><p>A string of the text to appear on the button</p></td>
+      <td><p>A string of the text to appear on the button.</p></td>
     </tr>
     <tr>
       <th>url</th>
-      <td><p>A url for where the button should link to</p></td>
+      <td><p>A url for where the button should link to.</p></td>
+    </tr>
+    <tr>
+      <th>class</th>
+      <td><p>A string to define a class, defaults to "icon-link".</p></td>
+    </tr>
+    <tr>
+      <th>target</th>
+      <td><p>A string to define a target, typically <code>"_blank"</code>, <code>"_self"</code>,
+<code>"_parent"</code>, or <code>"_top"</code>. Defaults to "_blank".</p></td>
     </tr>
     </table>
 

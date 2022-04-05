@@ -109,7 +109,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">distilltools</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9002</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9003</span>
       </span>
     </div>
 
@@ -210,7 +210,7 @@
 Distill site or blog:</p><ol>
 <li><p>Apply it site-wide by adding a <code>theme</code> key to the top-level of your
 <code>_site.yml</code> configuration file (assuming the theme file is in your
-root directory):<div class="yaml"></p><pre><span class='va'>output</span><span class='op'>:</span>
+root directory):<div class="sourceCode yaml"></p><pre><span class='va'>output</span><span class='op'>:</span>
   <span class='fu'>distill</span><span class='fu'>::</span><span class='va'><a href='https://pkgs.rstudio.com/distill/reference/distill_article.html'>distill_article</a></span><span class='op'>:</span>
     <span class='va'>highlight</span><span class='op'>:</span> <span class='va'>highlighting.theme</span>
 </pre><p></div></p></li>
@@ -221,7 +221,7 @@ writing. There is an open
 <a href='https://github.com/rstudio/distill/issues/370'>issue</a> about this.</p><ol>
 <li><p>Apply to an individual article by adding a <code>theme</code> key to your
 article’s YAML front-matter, using the full path (assuming that the
-<code>.theme</code> file is in the site root directory), e.g.:<div class="yaml"></p><pre>---
+<code>.theme</code> file is in the site root directory), e.g.:<div class="sourceCode yaml"></p><pre>---
 title: "My Highlighting Theme"
 output:
   distill::distill_article:
