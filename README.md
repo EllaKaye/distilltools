@@ -22,6 +22,17 @@ for [xaringan](https://github.com/yihui/xaringan). Some of what I have
 in mind may sit better within the distill package itself, and I will be
 reaching out to the distill team about that.
 
+## Update (2022-05-29)
+
+Development on `distilltools` has been on a bit of a hiatus recently,
+but I will resume work on it. When I do, I want to ensure the package
+also has the functionality to support websites created in R with
+[Quarto](https://quarto.org), and so I may also rename the package.
+
+An article on `distilltools`, and my intentions for it, is featured in
+[The Future of Sata Science](http://datasciencebydesign.org/book)
+anthology (written October 2021, published June 2022).
+
 ## Installation
 
     # install.packages("remotes")
