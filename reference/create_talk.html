@@ -29,7 +29,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">distilltools</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.0.9003</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.0.9004</span>
       </span>
     </div>
 
@@ -66,36 +66,51 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">create_talk</span><span class="op">(</span>
-  <span class="va">title</span>,
-  collection <span class="op">=</span> <span class="st">"talks"</span>,
-  author <span class="op">=</span> <span class="st">"auto"</span>,
-  slug <span class="op">=</span> <span class="st">"auto"</span>,
-  date <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html" class="external-link">Sys.Date</a></span><span class="op">(</span><span class="op">)</span>,
-  date_prefix <span class="op">=</span> <span class="va">date</span>,
-  draft <span class="op">=</span> <span class="cn">FALSE</span>,
-  open <span class="op">=</span> <span class="cn">TRUE</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">create_talk</span><span class="op">(</span></span>
+<span>  <span class="va">title</span>,</span>
+<span>  collection <span class="op">=</span> <span class="st">"talks"</span>,</span>
+<span>  author <span class="op">=</span> <span class="st">"auto"</span>,</span>
+<span>  slug <span class="op">=</span> <span class="st">"auto"</span>,</span>
+<span>  date <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html" class="external-link">Sys.Date</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  date_prefix <span class="op">=</span> <span class="va">date</span>,</span>
+<span>  draft <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  open <span class="op">=</span> <span class="cn">TRUE</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>title</dt>
 <dd><p>Post title</p></dd>
+
+
 <dt>collection</dt>
 <dd><p>collection to create the post within (defaults to "talks")</p></dd>
+
+
 <dt>author</dt>
 <dd><p>Post author. Automatically drawn from previous post if not provided.</p></dd>
+
+
 <dt>slug</dt>
 <dd><p>Post slug (directory name). Automatically computed from title if not provided</p></dd>
+
+
 <dt>date</dt>
 <dd><p>Post date (defaults to current date)</p></dd>
+
+
 <dt>date_prefix</dt>
 <dd><p>Date prefix for post slug (preserves chronological order for talks within the filesystem). Pass <code>NULL</code> for no date prefix</p></dd>
+
+
 <dt>draft</dt>
 <dd><p>Mark the post as a <code>draft</code> (don't include in the article listing)</p></dd>
+
+
 <dt>open</dt>
 <dd><p>logical. Open the created file?</p></dd>
+
 </dl></div>
     <div id="note">
     <h2>Note</h2>
@@ -109,10 +124,10 @@ a Distill website.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/EllaKaye/distilltools" class="external-link">distilltools</a></span><span class="op">)</span></span>
-<span class="r-in"><span class="fu">create_talk</span><span class="op">(</span><span class="st">"My Talk"</span><span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/EllaKaye/distilltools" class="external-link">distilltools</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">create_talk</span><span class="op">(</span><span class="st">"My Talk"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -127,7 +142,7 @@ a Distill website.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
   <p class="preferably">Using <a href="https://preferably.amirmasoudabdol.name/?source=footer" class="external-link">preferably</a> template.</p>
 </div>
 

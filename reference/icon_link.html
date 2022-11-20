@@ -29,7 +29,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">distilltools</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.0.9003</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.0.9004</span>
       </span>
     </div>
 
@@ -66,37 +66,57 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">make_icon</span><span class="op">(</span><span class="va">icon</span>, style <span class="op">=</span> <span class="st">"default"</span><span class="op">)</span>
-
-<span class="fu">icon_link</span><span class="op">(</span>
-  icon <span class="op">=</span> <span class="cn">NULL</span>,
-  text <span class="op">=</span> <span class="cn">NULL</span>,
-  url <span class="op">=</span> <span class="cn">NULL</span>,
-  style <span class="op">=</span> <span class="st">"default"</span>,
-  class <span class="op">=</span> <span class="st">"icon-link"</span>,
-  target <span class="op">=</span> <span class="st">"_blank"</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">make_icon</span><span class="op">(</span><span class="va">icon</span>, style <span class="op">=</span> <span class="st">"default"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">icon_link</span><span class="op">(</span></span>
+<span>  icon <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  text <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  url <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  style <span class="op">=</span> <span class="st">"default"</span>,</span>
+<span>  class <span class="op">=</span> <span class="st">"icon-link"</span>,</span>
+<span>  target <span class="op">=</span> <span class="st">"_blank"</span>,</span>
+<span>  rel <span class="op">=</span> <span class="st">"noopener"</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>icon</dt>
 <dd><p>The name of the icon. For Font Awesome icons, the name should correspond to the current Version 5 name and can either be the the short name (e.g. <code>"github"</code>) or the full name (e.g. <code>"fab fa-github"</code>). <a href="https://jpswalsh.github.io/academicons/" class="external-link">Academicons</a> can also be used and styled the same way (e.g. <code>"google-scholar"</code> or <code>"ai ai-google-scholar"</code>) but require a site header. See <a href="https://www.jhelvy.com/posts/2021-03-25-customizing-distill-with-htmltools-and-css/#side-note-on-academic-icons" class="external-link">here</a> for details.</p></dd>
+
+
 <dt>style</dt>
 <dd><p>The style of the font awesome icon, which can be "default", "solid" or "regular". This parameter is only used when the short name of the icon is used in the <code>icon</code> argument and there is more than one style available for that icon. In that case, the default becomes "solid".</p></dd>
+
+
 <dt>text</dt>
 <dd><p>A string of the text to appear on the button.</p></dd>
+
+
 <dt>url</dt>
 <dd><p>A url for where the button should link to.</p></dd>
+
+
 <dt>class</dt>
 <dd><p>A string to define a class, defaults to "icon-link".</p></dd>
+
+
 <dt>target</dt>
-<dd><p>A string to define a target, typically <code>"_blank"</code>, <code>"_self"</code>,
+<dd><p>A string to define a target, typically <code>"_blank"</code>, <code>"_self"</code>,</p></dd>
+
+
+<dt>rel</dt>
+<dd><p>A string to define the <code>rel</code> attribute, defaults to "noopener"
 <code>"_parent"</code>, or <code>"_top"</code>. Defaults to "_blank".</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>For <code>make_icon</code>, a <code>shiny.tag</code> with the HTML <code>&lt;i class = "icon"&gt;&lt;/i&gt;</code>. For <code>icon_link</code>, a <code>shiny.tag</code> with the HTML <code>&lt;a href=url class="icon-link" target = "_blank" rel = "noopener"&gt;&lt;i class=icon&gt;&lt;/i&gt; text&lt;/a&gt;</code></p>
+    
+
+<p>For <code>make_icon</code>, a <code>shiny.tag</code> with the HTML <code>&lt;i class = "icon"&gt;&lt;/i&gt;</code>. For <code>icon_link</code>, a <code>shiny.tag</code> with the HTML <code>&lt;a href=url class="icon-link" target = "_blank" rel = "noopener"&gt;&lt;i class=icon&gt;&lt;/i&gt; text&lt;/a&gt;</code></p>
+
+
     </div>
     <div id="details">
     <h2>Details</h2>
@@ -111,17 +131,19 @@
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">make_icon</span><span class="op">(</span><span class="st">"images"</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">make_icon</span><span class="op">(</span><span class="st">"images"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> &lt;i class="fas fa-images"&gt;&lt;/i&gt;</span>
-<span class="r-in"><span class="fu">make_icon</span><span class="op">(</span><span class="st">"fas fa-images"</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">make_icon</span><span class="op">(</span><span class="st">"fas fa-images"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> &lt;i class="fas fa-images"&gt;&lt;/i&gt;</span>
-<span class="r-in"><span class="fu">make_icon</span><span class="op">(</span><span class="st">"far fa-images"</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">make_icon</span><span class="op">(</span><span class="st">"far fa-images"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> &lt;i class="far fa-images"&gt;&lt;/i&gt;</span>
-<span class="r-in"><span class="fu">make_icon</span><span class="op">(</span><span class="st">"images"</span>, style <span class="op">=</span> <span class="st">"regular"</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">make_icon</span><span class="op">(</span><span class="st">"images"</span>, style <span class="op">=</span> <span class="st">"regular"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> &lt;i class="far fa-images"&gt;&lt;/i&gt;</span>
-<span class="r-in"><span class="fu">icon_link</span><span class="op">(</span><span class="st">"github"</span>, <span class="st">"materials"</span>, <span class="st">"https://github.com/USER/REPO"</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">icon_link</span><span class="op">(</span><span class="st">"github"</span>, <span class="st">"materials"</span>, <span class="st">"https://github.com/USER/REPO"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> &lt;a href="https://github.com/USER/REPO" class="icon-link" target="_blank" rel="noopener"&gt;&lt;i class="fab fa-github"&gt;&lt;/i&gt; materials&lt;/a&gt;</span>
-<span class="r-in"><span class="fu">icon_link</span><span class="op">(</span><span class="st">"images"</span>, <span class="st">"slides"</span>, <span class="st">"https://USER.github.io/slides"</span>, style <span class="op">=</span> <span class="st">"regular"</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">icon_link</span><span class="op">(</span><span class="st">"mastodon"</span>, <span class="st">"mastodon"</span>, <span class="st">"https://mastodon.social/@my_profile"</span>, rel <span class="op">=</span> <span class="st">"me"</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;a href="https://mastodon.social/@my_profile" class="icon-link" target="_blank" rel="me"&gt;&lt;i class="fab fa-mastodon"&gt;&lt;/i&gt; mastodon&lt;/a&gt;</span>
+<span class="r-in"><span><span class="fu">icon_link</span><span class="op">(</span><span class="st">"images"</span>, <span class="st">"slides"</span>, <span class="st">"https://USER.github.io/slides"</span>, style <span class="op">=</span> <span class="st">"regular"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> &lt;a href="https://USER.github.io/slides" class="icon-link" target="_blank" rel="noopener"&gt;&lt;i class="far fa-images"&gt;&lt;/i&gt; slides&lt;/a&gt;</span>
 </code></pre></div>
     </div>
@@ -137,7 +159,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
   <p class="preferably">Using <a href="https://preferably.amirmasoudabdol.name/?source=footer" class="external-link">preferably</a> template.</p>
 </div>
 

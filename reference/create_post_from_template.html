@@ -30,7 +30,7 @@ interactively using the Create post (from template) RStudio addin."><meta proper
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">distilltools</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.0.9003</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.0.9004</span>
       </span>
     </div>
 
@@ -68,40 +68,57 @@ interactively using the <code>Create post (from template)</code> RStudio addin.<
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">create_post_from_template</span><span class="op">(</span>
-  <span class="va">path</span>,
-  <span class="va">title</span>,
-  collection <span class="op">=</span> <span class="st">"posts"</span>,
-  author <span class="op">=</span> <span class="st">"auto"</span>,
-  slug <span class="op">=</span> <span class="st">"auto"</span>,
-  date <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html" class="external-link">Sys.Date</a></span><span class="op">(</span><span class="op">)</span>,
-  date_prefix <span class="op">=</span> <span class="va">date</span>,
-  draft <span class="op">=</span> <span class="cn">FALSE</span>,
-  edit <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">create_post_from_template</span><span class="op">(</span></span>
+<span>  <span class="va">path</span>,</span>
+<span>  <span class="va">title</span>,</span>
+<span>  collection <span class="op">=</span> <span class="st">"posts"</span>,</span>
+<span>  author <span class="op">=</span> <span class="st">"auto"</span>,</span>
+<span>  slug <span class="op">=</span> <span class="st">"auto"</span>,</span>
+<span>  date <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html" class="external-link">Sys.Date</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  date_prefix <span class="op">=</span> <span class="va">date</span>,</span>
+<span>  draft <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  edit <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>path</dt>
 <dd><p>File path to <code>.Rmd</code> post template</p></dd>
+
+
 <dt>title</dt>
 <dd><p>Post title. If there is a title in the template, this will override it.</p></dd>
+
+
 <dt>collection</dt>
 <dd><p>Collection to create the post within (defaults to "posts")</p></dd>
+
+
 <dt>author</dt>
 <dd><p>Post author. If not provided, it will be automatically drawn from template. If not in template, it will be automatically drawn from previous post.</p></dd>
+
+
 <dt>slug</dt>
 <dd><p>Post slug (directory name). Automatically computed from title if not provided.</p></dd>
+
+
 <dt>date</dt>
 <dd><p>Post date (defaults to current date)</p></dd>
+
+
 <dt>date_prefix</dt>
 <dd><p>Date prefix for post slug (preserves chronological order for posts
 within the filesystem). Pass <code>NULL</code> for no date prefix.</p></dd>
+
+
 <dt>draft</dt>
 <dd><p>Mark the post as a <code>draft</code> (don't include it in the article listing).</p></dd>
+
+
 <dt>edit</dt>
 <dd><p>Open the post in an editor after creating it.</p></dd>
+
 </dl></div>
     <div id="details">
     <h2>Details</h2>
@@ -139,15 +156,15 @@ automatically provide a <code>description</code> key in the yaml.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/EllaKaye/distilltools" class="external-link">distilltools</a></span><span class="op">)</span></span>
-<span class="r-in"><span class="co"># .Rmd templates stored in "templates" directory</span></span>
-<span class="r-in"><span class="fu">create_post_from_template</span><span class="op">(</span></span>
-<span class="r-in">  path <span class="op">=</span> <span class="st">"templates/post-template.Rmd"</span>,</span>
-<span class="r-in">  title <span class="op">=</span> <span class="st">"My post from template"</span></span>
-<span class="r-in"><span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
-<span class="r-in"></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/EllaKaye/distilltools" class="external-link">distilltools</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="co"># .Rmd templates stored in "templates" directory</span></span></span>
+<span class="r-in"><span><span class="fu">create_post_from_template</span><span class="op">(</span></span></span>
+<span class="r-in"><span>  path <span class="op">=</span> <span class="st">"templates/post-template.Rmd"</span>,</span></span>
+<span class="r-in"><span>  title <span class="op">=</span> <span class="st">"My post from template"</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -162,7 +179,7 @@ automatically provide a <code>description</code> key in the yaml.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
   <p class="preferably">Using <a href="https://preferably.amirmasoudabdol.name/?source=footer" class="external-link">preferably</a> template.</p>
 </div>
 
