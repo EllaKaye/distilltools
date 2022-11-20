@@ -1,9 +1,9 @@
 Package: distilltools
 Type: Package
 Title: A collection of tools to assist in the creating and styling of content on {distill} websites
-Version: 0.0.0.9003
+Version: 0.0.0.9004
 Authors@R: c(
-  person("Ella", "Kaye", email = "E.Kaye.1@warwick.ac.uk", role = c("aut", "cre")),
+  person("Ella", "Kaye", email = "Ella.M.Kaye@warwick.ac.uk", role = c("aut", "cre")),
   person("John Paul", "Helveston", role = c("aut")),
   person("Michael", "McCarthy", role = "aut"),
   person()
@@ -16,7 +16,7 @@ Encoding: UTF-8
 LazyData: true
 BugReports: https://github.com/EllaKaye/distilltools/issues
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.0
 Imports: 
     distill,
     htmltools,

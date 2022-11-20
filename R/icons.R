@@ -83,10 +83,12 @@ make_icon_text <- function(icon, text, style = "default") {
 #' @param style The style of the font awesome icon, which can be "default", "solid" or "regular". This parameter is only used when the short name of the icon is used in the `icon` argument and there is more than one style available for that icon. In that case, the default becomes "solid".
 #' @param class A string to define a class, defaults to "icon-link".
 #' @param target A string to define a target, typically `"_blank"`, `"_self"`,
+#' @param rel A string to define the `rel` attribute, defaults to "noopener"
 #' `"_parent"`, or `"_top"`. Defaults to "_blank".
 #' @return For `make_icon`, a `shiny.tag` with the HTML `<i class = "icon"></i>`. For `icon_link`, a `shiny.tag` with the HTML `<a href=url class="icon-link" target = "_blank" rel = "noopener"><i class=icon></i> text</a>`
 #' @author John Paul Helveston and Ella Kaye
 #' @examples icon_link("github", "materials", "https://github.com/USER/REPO")
+#' @examples icon_link("mastodon", "mastodon", "https://mastodon.social/@my_profile", rel = "me")
 #' @examples icon_link("images", "slides", "https://USER.github.io/slides", style = "regular")
 #' @export
 icon_link <- function(
@@ -95,13 +97,14 @@ icon_link <- function(
   url = NULL,
   style = "default",
   class = "icon-link",
-  target = "_blank"
+  target = "_blank",
+  rel = "noopener"
 ) {
   if (!is.null(icon)) {
     text <- make_icon_text(icon, text, style = style)
   }
   return(htmltools::a(
-    href = url, text, class = class, target = target, rel = "noopener"
+    href = url, text, class = class, target = target, rel = rel
   ))
 }
 

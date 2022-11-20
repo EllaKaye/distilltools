@@ -13,7 +13,8 @@ icon_link(
   url = NULL,
   style = "default",
   class = "icon-link",
-  target = "_blank"
+  target = "_blank",
+  rel = "noopener"
 )
 }
 \arguments{
@@ -27,7 +28,9 @@ icon_link(
 
 \item{class}{A string to define a class, defaults to "icon-link".}
 
-\item{target}{A string to define a target, typically \code{"_blank"}, \code{"_self"},
+\item{target}{A string to define a target, typically \code{"_blank"}, \code{"_self"},}
+
+\item{rel}{A string to define the \code{rel} attribute, defaults to "noopener"
 \code{"_parent"}, or \code{"_top"}. Defaults to "_blank".}
 }
 \value{
@@ -49,6 +52,7 @@ make_icon("fas fa-images")
 make_icon("far fa-images")
 make_icon("images", style = "regular")
 icon_link("github", "materials", "https://github.com/USER/REPO")
+icon_link("mastodon", "mastodon", "https://mastodon.social/@my_profile", rel = "me")
 icon_link("images", "slides", "https://USER.github.io/slides", style = "regular")
 }
 \author{

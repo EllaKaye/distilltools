@@ -42,7 +42,9 @@ Distill site or blog:
 \enumerate{
 \item Apply it site-wide by adding a \code{theme} key to the top-level of your
 \verb{_site.yml} configuration file (assuming the theme file is in your
-root directory):\if{html}{\out{<div class="sourceCode yaml">}}\preformatted{output:
+root directory):
+
+\if{html}{\out{<div class="sourceCode yaml">}}\preformatted{output:
   distill::distill_article:
     highlight: highlighting.theme
 }\if{html}{\out{</div>}}
@@ -54,7 +56,9 @@ writing. There is an open
 \enumerate{
 \item Apply to an individual article by adding a \code{theme} key to your
 article’s YAML front-matter, using the full path (assuming that the
-\code{.theme} file is in the site root directory), e.g.:\if{html}{\out{<div class="sourceCode yaml">}}\preformatted{---
+\code{.theme} file is in the site root directory), e.g.:
+
+\if{html}{\out{<div class="sourceCode yaml">}}\preformatted{---
 title: "My Highlighting Theme"
 output:
   distill::distill_article:
